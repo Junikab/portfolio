@@ -1,14 +1,13 @@
 import React from "react";
 
-
-import Title from "./Title";
-import About from "./About";
+import Title from "./components/layout/Title";
+import About from "./components/layout/About";
 
 function App() {
     return (
         <div className="App">
             <Title />
-            <About/>
+            <About />
         </div>
     );
 }

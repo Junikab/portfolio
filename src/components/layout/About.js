@@ -1,19 +1,19 @@
-import React from 'react'
-import "./About.css"
+import React from "react";
+// import "../../styles/About.css";
 
-function About(){
+function About() {
     return (
         <>
-            <div className='about'>
-                <div className='aboutImg'>
+            <div className="about">
+                <div className="aboutImg">
                     <img
                         class="meImg"
                         src="./assets/Jenny.jpg"
                         alt="Jenny Deygin, front end developer"
                     />
                 </div>
-                <div className='aboutText'>
-                    <h2 className='aboutTitle'>ABOUT</h2>
+                <div className="aboutText">
+                    <h2 className="aboutTitle">ABOUT</h2>
                     <p>
                         JavaScript • Node.js • HTML5 • CSS3 • React • Express •
                         Bootstrap • Material-UI • MongoDB • MySQL • Cypress.io •
