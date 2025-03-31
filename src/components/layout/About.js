@@ -1,43 +1,35 @@
 import React from "react";
-// import "../../styles/About.css";
+import jennyImage from "../../assets/Jenny.jpg";
 
 function About() {
     return (
         <>
-            <div className="about">
-                <div className="aboutImg">
-                    <img
-                        class="meImg"
-                        src="./assets/Jenny.jpg"
-                        alt="Jenny Deygin, front end developer"
-                    />
+            <div className="relative lg:row-span-2">
+                <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
+                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+                    <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+                        <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                            About Me
+                        </p>
+                        <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                            I am a junior front-end developer experienced in QA
+                            automation using Express, JavaScript, and
+                            Cypress.io. Passionate about quality and user
+                            experience, I strive to improve my skills and stay
+                            up-to-date with industry trends.
+                        </p>
+                    </div>
+                    <div className="@container relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
+                        <div className="absolute inset-x-10 top-10 bottom-10 aboutImg">
+                            <img
+                                className="meImg border rounded-lg"
+                                src={jennyImage}
+                                alt="Jenny"
+                            />
+                        </div>
+                    </div>
                 </div>
-                <div className="aboutText">
-                    <h2 className="aboutTitle">ABOUT</h2>
-                    <p>
-                        JavaScript • Node.js • HTML5 • CSS3 • React • Express •
-                        Bootstrap • Material-UI • MongoDB • MySQL • Cypress.io •
-                        REST
-                    </p>
-                    <p>
-                        I am a junior front-end developer with a strong
-                        foundation in JavaScript and Node.js. Passionate about
-                        quality user experiences and automation, I have hands-on
-                        experience in building front-end projects with clean,
-                        maintainable code. My expertise lies in using
-                        technologies like React, Express, and Bootstrap to
-                        develop intuitive web applications, while leveraging
-                        Cypress.io and JavaScript for effective QA automation.
-                    </p>
-                    <p>
-                        My career journey includes contributing to projects at
-                        Driva.com as a Junior Automation QA and Edukana.com as
-                        an Associate Product Owner. Additionally, I have
-                        independently built a diverse portfolio of web
-                        applications, showcasing my skills in full-stack
-                        development and API management.
-                    </p>
-                </div>
+                <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-l-[2rem]"></div>
             </div>
         </>
     );
