@@ -8,10 +8,10 @@ function About() {
                 <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                        <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                        <p className="mt-2 text-lg font-medium text-gray-950 max-lg:text-center">
                             About Me
                         </p>
-                        <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                        <p className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
                             I am a junior front-end developer experienced in QA
                             automation using Express, JavaScript, and
                             Cypress.io. Passionate about quality and user
@@ -19,8 +19,8 @@ function About() {
                             up-to-date with industry trends.
                         </p>
                     </div>
-                    <div className="@container relative min-h-[30rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
-                        <div className="absolute inset-x-10 top-10 bottom-10 aboutImg">
+                    <div className="relative min-h-[30rem] w-full max-lg:mx-auto max-lg:max-w-sm">
+                        <div className="absolute inset-x-10 top-6 bottom-8 aboutImg">
                             <img
                                 className="meImg border rounded-lg"
                                 src={jennyImage}
@@ -29,7 +29,6 @@ function About() {
                         </div>
                     </div>
                 </div>
-                <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 lg:rounded-l-[2rem]"></div>
             </div>
         </>
     );

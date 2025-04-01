@@ -3,11 +3,11 @@ function DownloadResume() {
         <a
             href="/assets/JennyDeyginCV.pdf"
             download
-            className="inline-flex items-center px-4 py-3 bg-blue-600 text-white font-large rounded hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center justify-center w-auto max-w-xs mx-auto px-3 py-2.5 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition-colors"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-2"
+                className="h-6 w-6 mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
