@@ -9,13 +9,14 @@ function Experience() {
                     <p className="mt-2 text-lg font-medium text-gray-950 max-lg:text-center">
                         Experience
                     </p>
-                    <p className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
-                        Web development -5 years <br />
-                        React - 3 years <br />
-                        Interests: Maps, Visualization <br />
-                        Education: Bachelor Degree In Geography And Human
-                        Environment
-                    </p>
+                    <div className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
+                        <p>
+                            Web development -5 years <br />
+                            React - 3 years <br />
+                            Education: Bachelor Degree In Geography And Human
+                            Environment
+                        </p>
+                    </div>
                 </div>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5 max-lg:rounded-t-[2rem]"></div>

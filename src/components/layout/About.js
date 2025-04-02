@@ -11,13 +11,15 @@ function About() {
                         <p className="mt-2 text-lg font-medium text-gray-950 max-lg:text-center">
                             About Me
                         </p>
-                        <p className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
-                            I am a junior front-end developer experienced in QA
-                            automation using Express, JavaScript, and
-                            Cypress.io. Passionate about quality and user
-                            experience, I strive to improve my skills and stay
-                            up-to-date with industry trends.
-                        </p>
+                        <div className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
+                            <p>
+                                I am a junior front-end developer experienced in
+                                QA automation using Express, JavaScript, and
+                                Cypress.io. Passionate about quality and user
+                                experience, I strive to improve my skills and
+                                stay up-to-date with industry trends.
+                            </p>
+                        </div>
                     </div>
                     <div className="relative min-h-[30rem] w-full max-lg:mx-auto max-lg:max-w-sm">
                         <div className="absolute inset-x-10 top-6 bottom-8 aboutImg">
