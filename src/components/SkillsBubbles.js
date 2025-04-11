@@ -16,32 +16,21 @@ function SkillsBubbles() {
         { id: "TypeScript", group: "language", value: 40 },
         { id: "Node.js", group: "backend", value: 30 },
         { id: "Express", group: "backend", value: 25 },
-        { id: "MongoDB", group: "database", value: 30 },
+        { id: "MongoDB", group: "database", value: 40 },
         { id: "Tailwind", group: "styling", value: 35 },
         { id: "Git", group: "tool", value: 30 },
         { id: "Cypress.io", group: "testing", value: 40 },
-        // { id: "GraphQL", group: "api", value: 38 },
-        // { id: "Redux", group: "state", value: 35 },
         { id: "Material UI", group: "styling", value: 38 },
-        // { id: "SVG", group: "graphics", value: 28 },
         { id: "REST", group: "api", value: 35 },
-        // { id: "SQL", group: "database", value: 30 },
-        // { id: "Jest", group: "testing", value: 32 },
-        // { id: "Webpack", group: "tool", value: 30 },
         { id: "Agile", group: "methodology", value: 32 },
         { id: "Bootstrap", group: "styling", value: 35 },
-        // { id: "React hooks", group: "framework", value: 40 },
-        // { id: "Figma", group: "design", value: 32 },
-        // { id: "PostCSS", group: "styling", value: 34 },
-        // { id: "jQuery", group: "library", value: 30 },
-        // { id: "SASS", group: "styling", value: 30 },
     ];
 
     const skillColors = {
-        language: "rgb(76, 209, 55)", // #4cd137
+        language: "rgb(80,200,120)", // #4cd137
         framework: "rgb(0, 168, 255)", // #00a8ff
         backend: "rgb(251, 197, 49)", // #fbc531
-        database: "rgb(232, 65, 24)", // #e84118
+        database: "rgb(255,166,201)", // #e84118
         styling: "rgb(156, 136, 255)", // #9c88ff
         tool: "rgb(72, 126, 176)", // #487eb0
         testing: "rgb(225, 177, 44)", // #e1b12c
