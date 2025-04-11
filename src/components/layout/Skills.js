@@ -11,7 +11,7 @@ function Skills() {
                         Technical Skills
                     </p>
                     <p className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
-                        feel free to drag and move the bubbles around :)
+                        Feel free to drag and move the bubbles around :)
                     </p>
 
                     {/* <div className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">

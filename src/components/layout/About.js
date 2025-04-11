@@ -11,7 +11,7 @@ function About() {
                         <p className="mt-2 text-lg font-medium text-gray-950 max-lg:text-center">
                             About Me
                         </p>
-                        <div className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
+                        <div className="my-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
                             <p>
                                 I am a junior front-end developer experienced in
                                 QA automation using Express, JavaScript, and
@@ -21,10 +21,10 @@ function About() {
                             </p>
                         </div>
                     </div>
-                    <div className="relative min-h-[30rem] w-full max-lg:mx-auto max-lg:max-w-sm">
-                        <div className="absolute inset-x-10 top-6 bottom-8 aboutImg">
+                    <div className="relative flex-grow w-full max-lg:mx-auto max-lg:max-w-sm px-6 sm:px-10 pb-6">
+                        <div className="h-full w-full">
                             <img
-                                className="meImg border rounded-lg"
+                                className="object-cover w-full h-full rounded-lg border"
                                 src={jennyImage}
                                 alt="Jenny"
                             />
