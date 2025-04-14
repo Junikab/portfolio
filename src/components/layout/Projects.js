@@ -4,7 +4,7 @@ import projectsData from "../projectData";
 const ProjectCard = ({ project }) => (
     <div
         key={project.id}
-        className="flex flex-col overflow-hidden rounded-lg shadow-md bg-white transition-transform hover:scale-[1.02] hover:shadow-lg"
+        className="flex flex-col overflow-hidden rounded-xl shadow-md bg-white transition-transform hover:scale-[1.02] hover:shadow-lg"
     >
         {/* Image container */}
         <div className="relative h-[280px]">
@@ -24,15 +24,15 @@ const ProjectCard = ({ project }) => (
         <div className="flex flex-1 flex-col p-4">
             {/* Content container - moved outside the image div */}
             <div className="flex flex-1 flex-col p-4">
-                <h3 className="text-lg font-semibold text-gray-900 text-center">
+                <h3 className="text-xl font-semibold text-gray-900 text-center">
                     {project.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-600 text-left">
+                <p className="mt-2 text-lg text-gray-800 text-left">
                     {project.description}
                 </p>
 
                 {/* Tech stack */}
-                <div className="mt-3 text-sm text-gray-500 mt-4">
+                <div className="mt-3 text-lg text-gray-500 mt-4">
                     {project.tech.join(", ")}
                 </div>
             </div>

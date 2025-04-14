@@ -1,4 +1,4 @@
-import resumePDF from "../../assets/JennyDeyginCV.pdf";
+import resumePDF from "../assets/JennyDeyginCV.pdf";
 
 function DownloadResume() {
     return (

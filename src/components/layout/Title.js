@@ -5,6 +5,7 @@ import Experience from "./Experience";
 import SocialLinks from "./SocialLinks";
 import Skills from "./Skills";
 import Projects from "./Projects";
+import Footer from "./Footer";
 
 function Title() {
     return (
@@ -20,18 +21,13 @@ function Title() {
                 <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2 text-justify">
                     <About />
                     <Experience />
-                    <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
-                        <div className="absolute inset-px rounded-lg bg-white"></div>
-                        <div className="relative flex flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] px-4 py-4 space-y-4">
-                            <SocialLinks />
-                        </div>
-                        <div className="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5"></div>
-                    </div>
+                    <SocialLinks />
                     <Skills />
                 </div>
                 <div className="mt-10">
                     <Projects />
                 </div>
+                <Footer />
             </div>
         </div>
     );
