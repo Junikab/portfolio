@@ -24,7 +24,7 @@ const ProjectCard = ({ project }) => (
         <div className="flex flex-1 flex-col p-4">
             {/* Content container - moved outside the image div */}
             <div className="flex flex-1 flex-col p-4">
-                <h3 className="text-lg font-medium text-gray-900 text-center">
+                <h3 className="text-lg font-semibold text-gray-900 text-center">
                     {project.title}
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 text-left">
@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => (
                 </p>
 
                 {/* Tech stack */}
-                <div className="mt-3 text-sm text-gray-500 text-center">
+                <div className="mt-3 text-sm text-gray-500 mt-4">
                     {project.tech.join(", ")}
                 </div>
             </div>
@@ -52,7 +52,7 @@ const ProjectCard = ({ project }) => (
 function Projects() {
     return (
         <div className="mx-auto py-10">
-            <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+            <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-0">
                 <h2 className="mb-12 text-center text-4xl font-bold text-gray-800 uppercase tracking-wider">
                     My Projects
                 </h2>

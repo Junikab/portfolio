@@ -1,8 +1,10 @@
+import resumePDF from "../../assets/JennyDeyginCV.pdf";
+
 function DownloadResume() {
     return (
         <a
-            href="/assets/JennyDeyginCV.pdf"
-            download
+            href={resumePDF}
+            download="JennyDeyginCV.pdf"
             className="inline-flex items-center justify-center w-auto max-w-xs mx-auto px-3 py-2.5 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition-colors"
         >
             <svg

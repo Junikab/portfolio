@@ -8,8 +8,8 @@ import jennysFlowersImage from "../assets/jennysFlowers.png";
 const projectsData = [
     {
         id: 1,
-        title: "Lights-Out",
-        description: "Description 1",
+        title: "Lights Out",
+        description: "Click lights to solve the colorful grid puzzle.",
         image: lightsOutImage,
         link: "https://junikab.github.io/Lights-Out/",
         tech: ["JavaScript", "React", "CSS"],
@@ -24,7 +24,7 @@ const projectsData = [
     },
     {
         id: 3,
-        title: "Yahtzee-game",
+        title: "Yahtzee game",
         description: "A Yahtzee game built with React.",
         image: yahtzeeImage,
         link: "https://junikab.github.io/Yahtzee-game/",
@@ -32,7 +32,7 @@ const projectsData = [
     },
     {
         id: 4,
-        title: "Dad-Jokes",
+        title: "Dad Jokes",
         description:
             "A source for the cheesiest and most delightful dad jokes.",
         image: dadJokesImage,
@@ -41,7 +41,7 @@ const projectsData = [
     },
     {
         id: 5,
-        title: "fitfinderIkea",
+        title: "Fitfinder Ikea",
         description:
             "Chrome extension that allows you to filter furniture based on specific dimensions.",
         image: fitfinderIkeaImage,
@@ -51,7 +51,8 @@ const projectsData = [
     {
         id: 6,
         title: "Jenny's Flowers",
-        description: "Description 6",
+        description:
+            "Custom florist website built for a flower shop client.",
         image: jennysFlowersImage,
         link: "https://junikab.github.io/jennys-flowers/",
         tech: ["JavaScript", "Vue", "Bootstrap"],
