@@ -1,5 +1,7 @@
 import React from "react";
 import DownloadResume from "../Resume";
+import Links from "../links";
+
 
 function Footer() {
     return (
@@ -51,6 +53,9 @@ function Footer() {
                     <div className="h-full flex flex-col justify-between px-6 pb-4">
                         <div className="self-start">
                             <DownloadResume />
+                        </div>
+                        <div className="self-left">
+                            <Links />
                         </div>
                         <div className="self-bottom">
                             <p className="mt-auto pt-4 text-gray-50 text-sm/8">

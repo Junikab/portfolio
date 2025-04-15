@@ -1,6 +1,7 @@
 import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+
 import DownloadResume from "../Resume";
+import Links from "../links";
 
 function SocialLinks() {
     return (
@@ -19,23 +20,8 @@ function SocialLinks() {
                         <div className="px-6 pb-4">
                             <DownloadResume />
                         </div>
-                        <div className="flex px-6 space-x-8">
-                            <a
-                                href="https://linkedin.com/in/jennydeygin"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-600 hover:text-blue-800 transition-colors"
-                            >
-                                <FaLinkedin size={40} />
-                            </a>
-                            <a
-                                href="https://github.com/junikab"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-800 hover:text-gray-600 transition-colors"
-                            >
-                                <FaGithub size={40} />
-                            </a>
+                        <div>
+                            <Links />
                         </div>
                     </div>
                 </div>
