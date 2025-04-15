@@ -5,10 +5,10 @@ import JsLogo from "../jsLogo";
 function Header() {
     const Title = () => (
         <div className="flex flex-col justify-center items-center">
-            <h2 className="text-4xl font-semibold uppercase text-gray-800 sm:text-5xl text-center">
+            <h2 className="text-4xl uppercase text-white sm:text-5xl text-center">
                 Jenny Deygin
             </h2>
-            <h2 className="mt-3 text-3xl text-gray-600 text-center">
+            <h2 className="mt-3 text-3xl text-gray-100 text-center">
                 Front End Developer
             </h2>
         </div>
@@ -16,7 +16,7 @@ function Header() {
 
 
     return (
-        <div className="bg-white shadow-md rounded-lg py-10">
+        <div className="mx-auto bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md rounded-lg py-10">
             {/* Desktop Layout (3-column grid) - hidden on mobile */}
             <div className="hidden md:grid md:grid-cols-3">
                 <div className="flex justify-center items-center">

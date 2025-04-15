@@ -22,9 +22,9 @@ function About() {
                         </div>
                     </div>
                     <div className="relative flex-grow w-full max-lg:mx-auto max-lg:max-w-sm px-6 sm:px-10 pb-6">
-                        <div className="h-full w-full">
+                        <div className="h-full w-full rounded-lg overflow-hidden">
                             <img
-                                className="object-cover w-full h-full rounded-lg border"
+                                className="object-cover w-full h-full rounded-lg"
                                 src={jennyImage}
                                 alt="Jenny"
                             />

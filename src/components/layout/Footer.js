@@ -3,23 +3,23 @@ import DownloadResume from "../Resume";
 
 function Footer() {
     return (
-        <footer className="mx-auto py-10 bg-gray-50 rounded-xl shadow-md">
+        <footer className="mx-auto py-10 bg-gray-50 rounded-xl shadow-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
                     <div>
-                        <p className="text-gray-600">
-                            <h2 className="text-3xl mb-4 font-medium uppercase text-gray-800">
+                        <p className="text-white">
+                            <h2 className="text-3xl mb-4 font-medium uppercase">
                                 Inspired By
                             </h2>{" "}
                         </p>
-                        <div className="text-gray-600 text-lg/8">
+                        <div className="text-gray-50 text-lg/8">
                             <p>
                                 Beautiful portfolio by{" "}
                                 <a
                                     href="https://juliakuchina.github.io/portfolio/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-purple-600 hover:text-gray-800 uppercase transition-colors"
+                                    className="text-fuchsia-300 hover:text-gray-800 uppercase transition-colors"
                                 >
                                     juliakuchina
                                 </a>{" "}
@@ -28,10 +28,10 @@ function Footer() {
                         </div>
                     </div>
                     <div>
-                        <h2 className="text-3xl mb-4 font-medium uppercase text-gray-800">
+                        <h2 className="text-3xl mb-4 font-medium uppercase text-white">
                             Built With
                         </h2>
-                        <div className="text-gray-600 text-lg/8">
+                        <div className="text-gray-50 text-lg/8">
                             <p>
                                 <span className="font-medium">React</span> -
                                 Component-based UI library
@@ -53,7 +53,7 @@ function Footer() {
                             <DownloadResume />
                         </div>
                         <div className="self-bottom">
-                            <p className="mt-auto pt-4 text-gray-600 text-sm/8">
+                            <p className="mt-auto pt-4 text-gray-50 text-sm/8">
                                 &copy; 2025 Junikab. All rights reserved.
                             </p>
                         </div>

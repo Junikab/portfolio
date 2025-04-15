@@ -13,13 +13,13 @@ import WidthContainer from "./WidthContainer";
 
 function Title() {
     return (
-        <div className="bg-gradient-to-tl shadow-md from-neutral-100 to-neutral-300 pt-16 pb-24 sm:pt-16 sm:pb-16">
+        <div className="bg-gradient-to-tl from-neutral-100 to-neutral-300 pt-10 pb-24 sm:pt-10 sm:pb-10">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
                 <WidthContainer>
                     <Header />
                 </WidthContainer>
 
-                <WidthContainer className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2 text-justify">
+                <WidthContainer className="mt-10 grid gap-4 sm:mt-10 lg:grid-cols-3 lg:grid-rows-2 text-justify">
                     <About />
                     <Experience />
                     <SocialLinks />
