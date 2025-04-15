@@ -14,8 +14,9 @@ function Header() {
         </div>
     );
 
+
     return (
-        <div className="w-full bg-white shadow-md rounded-lg py-10">
+        <div className="bg-white shadow-md rounded-lg py-10">
             {/* Desktop Layout (3-column grid) - hidden on mobile */}
             <div className="hidden md:grid md:grid-cols-3">
                 <div className="flex justify-center items-center">

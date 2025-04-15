@@ -3,7 +3,7 @@ import DownloadResume from "../Resume";
 
 function Footer() {
     return (
-        <footer className="w-full mx-auto py-10 bg-gray-50 rounded-xl shadow-md">
+        <footer className="mx-auto py-10 bg-gray-50 rounded-xl shadow-md">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
                     <div>

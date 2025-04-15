@@ -39,7 +39,7 @@ const ProjectCard = ({ project }) => (
 
 function Projects() {
     return (
-        <div className="w-full mx-auto py-10">
+        <div className="mx-auto py-10">
             <div className="mx-auto max-w-2xl px-0 lg:max-w-7xl lg:px-0">
                 <h2 className="mb-10 text-center text-4xl font-bold text-gray-800 uppercase tracking-wider">
                     My Projects
