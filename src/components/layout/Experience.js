@@ -19,7 +19,7 @@ function Experience() {
                     </div>
                     <div className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
                         <p>
-                            <span>Interest</span> - Maps, Visualization.
+                            <span>Interests</span> - Maps, Visualization.
                         </p>
                     </div>
                 </div>

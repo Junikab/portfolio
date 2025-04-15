@@ -21,8 +21,8 @@ function About() {
                             </p>
                         </div>
                     </div>
-                    <div className="relative flex-grow w-full max-lg:mx-auto max-lg:max-w-sm px-6 sm:px-10 pb-6">
-                        <div className="h-full w-full rounded-lg overflow-hidden">
+                    <div className="relative bg-gradient-to-tr from-teal-800 to-teal-300/10 pt-6 flex-grow w-full max-lg:mx-auto max-lg:max-w-sm px-6 sm:px-10 pb-6">
+                        <div className="h-full w-full rounded-full overflow-hidden">
                             <img
                                 className="object-cover w-full h-full rounded-lg"
                                 src={jennyImage}

@@ -21,12 +21,12 @@ const SKILLS = [
     { id: "Vue.js", group: "framework", value: 38 },
     { id: "EJS", group: "template", value: 30 },
     { id: "D3.js", group: "library", value: 35 },
-    { id: "Responsive Design", group: "methodology", value: 40 },
-    { id: "Chrome Extensions", group: "development", value: 32 },
+    { id: "Responsive Design", group: "methodology", value: 42 },
+    { id: "Chrome Extensions", group: "development", value: 35 },
     { id: "GitHub Pages", group: "deployment", value: 30 },
-    { id: "QA Automation", group: "testing", value: 38 },
+    { id: "QA Automation", group: "testing", value: 40 },
     { id: "GIS", group: "domain", value: 30 },
-    { id: "Windsurf IDE", group: "ai_tools", value: 28 },
+    { id: "Windsurf IDE", group: "ai_tools", value: 30 },
 ];
 
 const SKILL_COLORS = {
@@ -211,7 +211,7 @@ function SkillsBubbles() {
 
                 // Add text (optimized font calculation)
                 const fontSize = Math.min(Math.max(12, node.radius * 0.5), 14);
-                context.font = `${fontSize}px sans-serif`;
+                context.font = `${fontSize}px bold sans-serif`;
                 context.textAlign = "center";
                 context.textBaseline = "middle";
                 context.fillStyle = "#1e293b";
