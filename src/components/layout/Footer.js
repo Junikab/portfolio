@@ -3,9 +3,9 @@ import DownloadResume from "../Resume";
 
 function Footer() {
     return (
-        <footer className="mx-auto py-10 bg-gray-50 rounded-xl shadow-md">
-            <div className="mx-8 max-w-2xl px-6 lg:max-w-7xl lg:px-0">
-                <div className="grid grid-cols-3 h-full">
+        <footer className="w-full mx-auto py-10 bg-gray-50 rounded-xl shadow-md">
+            <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
                     <div>
                         <p className="text-gray-600">
                             <h2 className="text-3xl mb-4 font-medium uppercase text-gray-800">
@@ -53,7 +53,7 @@ function Footer() {
                             <DownloadResume />
                         </div>
                         <div className="self-bottom">
-                            <p className="mt-auto text-gray-600 text-sm/8">
+                            <p className="mt-auto pt-4 text-gray-600 text-sm/8">
                                 &copy; 2025 Junikab. All rights reserved.
                             </p>
                         </div>

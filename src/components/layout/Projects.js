@@ -6,7 +6,6 @@ const ProjectCard = ({ project }) => (
         key={project.id}
         className="flex flex-col overflow-hidden rounded-xl shadow-md bg-white transition-transform hover:scale-[1.02] hover:shadow-lg"
     >
-        {/* Image container */}
         <div className="relative h-[280px]">
             <a
                 href={project.link}
@@ -22,7 +21,6 @@ const ProjectCard = ({ project }) => (
             </a>
         </div>
         <div className="flex flex-1 flex-col p-4">
-            {/* Content container - moved outside the image div */}
             <div className="flex flex-1 flex-col p-4">
                 <h3 className="text-xl font-semibold text-gray-900 text-center">
                     {project.title}
@@ -31,29 +29,19 @@ const ProjectCard = ({ project }) => (
                     {project.description}
                 </p>
 
-                {/* Tech stack */}
                 <div className="mt-3 text-lg text-gray-500 mt-4">
                     {project.tech.join(", ")}
                 </div>
             </div>
         </div>
-{/* 
-        <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 self-center text-blue-600 hover:text-blue-800 hover:underline"
-        >
-            View Project
-        </a> */}
     </div>
 );
 
 function Projects() {
     return (
-        <div className="mx-auto py-10">
-            <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-0">
-                <h2 className="mb-12 text-center text-4xl font-bold text-gray-800 uppercase tracking-wider">
+        <div className="w-full mx-auto py-10">
+            <div className="mx-auto max-w-2xl px-0 lg:max-w-7xl lg:px-0">
+                <h2 className="mb-10 text-center text-4xl font-bold text-gray-800 uppercase tracking-wider">
                     My Projects
                 </h2>
                 <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
