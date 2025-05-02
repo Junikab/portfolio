@@ -5,12 +5,12 @@ import Links from "../links";
 
 function Footer() {
     return (
-        <footer className="mx-auto py-10 bg-gray-50 rounded-xl shadow-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <footer className="mx-auto py-10 bg-gray-50 rounded-xl shadow-md bg-gradient-to-r from-indigo-500/70 via-purple-500/70 to-pink-500/70">
             <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
                     <div>
                         <p className="text-white">
-                            <h2 className="text-3xl mb-4 font-medium uppercase">
+                            <h2 className="text-3xl mb-4 font-medium capitalize">
                                 Inspired By
                             </h2>{" "}
                         </p>
@@ -30,7 +30,7 @@ function Footer() {
                         </div>
                     </div>
                     <div>
-                        <h2 className="text-3xl mb-4 font-medium uppercase text-white">
+                        <h2 className="text-3xl mb-4 font-medium capitalize text-white">
                             Built With
                         </h2>
                         <div className="text-gray-50 text-lg/8">
@@ -52,9 +52,9 @@ function Footer() {
                     </div>
                     <div className="h-full flex flex-col justify-between px-6 pb-4">
                         <div className="self-start">
-                            <DownloadResume />
+                            <DownloadResume colorScheme="alternate" />
                         </div>
-                        <div className="self-left">
+                        <div className="mt-4 self-left">
                             <Links />
                         </div>
                         <div className="self-bottom">

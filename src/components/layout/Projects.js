@@ -41,7 +41,7 @@ function Projects() {
     return (
         <div className="mx-auto py-10">
             <div className="mx-auto max-w-2xl px-0 lg:max-w-7xl lg:px-0">
-                <h2 className="mb-10 text-center text-4xl font-bold text-gray-800 uppercase tracking-wider">
+                <h2 className="mb-10 text-center text-4xl font-bold text-gray-800 capitalize tracking-wider">
                     My Projects
                 </h2>
                 <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">

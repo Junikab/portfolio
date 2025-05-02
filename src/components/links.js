@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 function Links() {
     return (
-    <div className="flex px-6 space-x-8 justify-center">
+    <div className="flex px-6 space-x-8 items-center">
         <a
             href="https://linkedin.com/in/jennydeygin"
             target="_blank"

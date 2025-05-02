@@ -1,15 +1,25 @@
 import resumePDF from "../assets/JennyDeyginCV.pdf";
 
-function DownloadResume() {
+function DownloadResume({ colorScheme = "default" }) {
+    // Define different color schemes
+    const gradients = {
+        default: "bg-gradient-to-r from-indigo-500/70 to-pink-500/70",
+        alternate: "bg-purple-600/70",
+        // Add more schemes as needed
+    };
+
+    // Use the selected gradient or fall back to default
+    const gradientClasses = gradients[colorScheme] || gradients.default;
+
     return (
         <a
             href={resumePDF}
             download="JennyDeyginCV.pdf"
-            className="inline-flex items-center justify-center w-auto max-w-xs mx-auto px-3 py-2.5 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition-colors"
+            className={`inline-flex items-center justify-center w-[95%] px-2 py-6 ${gradientClasses} shadow-lg text-xl text-white font-medium rounded-lg hover:opacity-90 transition-all`}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 mr-2"
+                className="h-10 w-10 mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

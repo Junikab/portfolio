@@ -6,7 +6,7 @@ function Skills() {
         <div className="relative lg:row-span-2 h-full">
             <div className="absolute inset-px shadow-md rounded-lg bg-white"></div>
             <div className="relative flex h-full flex-col overflow-hidden">
-                <div className="px-8 pt-8 pb-4 sm:px-10 sm:pt-10">
+                <div className="px-6 pt-6 pb-4 sm:px-10 sm:pt-10">
                     <p className="mt-2 text-3xl font-medium text-gray-950 max-lg:text-center">
                         Technical Skills
                     </p>

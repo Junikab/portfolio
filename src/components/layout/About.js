@@ -6,7 +6,7 @@ function About() {
         <div className="relative lg:row-span-2 h-full">
             <div className="absolute inset-px rounded-lg bg-white"></div>
             <div className="relative flex h-full shadow-md flex-col overflow-hidden rounded-lg">
-                <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
+                <div className="px-6 pt-6 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
                     <p className="mt-2 text-3xl font-medium text-gray-950 max-lg:text-center">
                         About Me
                     </p>
@@ -28,7 +28,7 @@ function About() {
                         </p>
                     </div>
                 </div>
-                <div className="relative bg-gradient-to-t from-violet-950 to-violet-100/10 w-full h-full pt-6 flex-grow pb-6 flex justify-center">
+                <div className="relative bg-gradient-to-t from-violet-950/80 to-violet-100/10 w-full h-full pt-6 flex-grow pb-6 flex justify-center items-center">
                     <div className="h-72 w-72 border-2 border-indigo-950 rounded-full overflow-hidden">
                         <img
                             className="object-cover w-full h-full"
