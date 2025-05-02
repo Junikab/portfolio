@@ -3,7 +3,7 @@ import jennyImage from "../../assets/Jenny.jpg";
 
 function About() {
     return (
-        <div className="relative lg:row-span-2">
+        <div className="relative lg:row-span-2 h-full">
             <div className="absolute inset-px rounded-lg bg-white"></div>
             <div className="relative flex h-full shadow-md flex-col overflow-hidden rounded-lg">
                 <div className="px-8 pt-8 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
@@ -19,8 +19,9 @@ function About() {
                             <strong>Cypress.io</strong>. Early in my career,
                             I've embraced both traditional development practices
                             and modern <strong>AI-assisted workflows</strong> to
-                            enhance productivity. <br/>I'm passionate about
-                            creating <strong>intuitive interfaces</strong> while
+                            enhance productivity. <br />
+                            I'm passionate about creating{" "}
+                            <strong>intuitive interfaces</strong> while
                             continuously exploring
                             <strong> emerging technologies</strong> that reshape
                             our development landscape.

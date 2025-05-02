@@ -3,7 +3,7 @@ import SkillsBubbles from "../SkillsBubbles";
 
 function Skills() {
     return (
-        <div className="relative lg:row-span-2">
+        <div className="relative lg:row-span-2 h-full">
             <div className="absolute inset-px shadow-md rounded-lg bg-white"></div>
             <div className="relative flex h-full flex-col overflow-hidden">
                 <div className="px-8 pt-8 pb-4 sm:px-10 sm:pt-10">

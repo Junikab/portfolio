@@ -5,9 +5,9 @@ import Links from "../links";
 
 function SocialLinks() {
     return (
-        <div className="lg:col-start-2 lg:row-start-2">
-            <div className="h-full shadow-md rounded-lg bg-white max-lg:text-center">
-                <div className="relative flex flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] px-4 py-4 space-y-4">
+        <div className="relative lg:row-start-1">
+            <div className="shadow-md rounded-lg bg-white max-lg:text-center">
+                <div className="relative flex flex-col overflow-hidden px-4 py-4 space-y-4">
                     <div className="px-6 pt-6">
                         <p className="text-3xl font-medium text-gray-950">
                             Social Links
