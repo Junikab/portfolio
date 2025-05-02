@@ -451,11 +451,9 @@ function SkillsBubbles() {
     return (
         <div
             ref={containerRef}
-            className="w-full h-[600px] bg-white rounded-lg overflow-hidden shadow-md"
-            // Added shadow for better visual separation
+            className="w-full h-full overflow-hidden"
         >
             <canvas ref={canvasRef} className="w-full h-full block" />
-            {/* Ensure canvas fills the container */}
         </div>
     );
 }
