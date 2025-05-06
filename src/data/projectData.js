@@ -8,8 +8,8 @@ import jennysFlowersImage from "../assets/jennysFlowers.png";
 const projectsData = [
     {
         id: 1,
-        title: "Jenny's Flowers",
-        description: "Custom florist website built for a flower shop client.",
+        title: "Flower Designer",
+        description: "Custom florist website built for a business client.",
         image: jennysFlowersImage,
         link: "https://junikab.github.io/jennys-flowers/",
         tech: ["JavaScript", "Vue", "Bootstrap"],
