@@ -11,7 +11,7 @@ const projectsData = [
         title: "Flower Designer",
         description: "Custom florist website built for a business client.",
         image: jennysFlowersImage,
-        link: "https://junikab.github.io/jennys-flowers/",
+        link: "https://jennysflowers.com.au/",
         tech: ["JavaScript", "Vue", "Bootstrap"],
     },
     {
