@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.235e034f.css",
-    "main.js": "/portfolio/static/js/main.ac4456a0.js",
+    "main.js": "/portfolio/static/js/main.20260ad3.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/jennysFlowers.png": "/portfolio/static/media/jennysFlowers.d0273a23932febaccc79.png",
     "static/media/yelpCamp.png": "/portfolio/static/media/yelpCamp.cb94787bfaa20268b416.png",
@@ -13,11 +13,11 @@
     "static/media/fitFinderIkea.png": "/portfolio/static/media/fitFinderIkea.8d6df24b350ec10c1b20.png",
     "index.html": "/portfolio/index.html",
     "main.235e034f.css.map": "/portfolio/static/css/main.235e034f.css.map",
-    "main.ac4456a0.js.map": "/portfolio/static/js/main.ac4456a0.js.map",
+    "main.20260ad3.js.map": "/portfolio/static/js/main.20260ad3.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.235e034f.css",
-    "static/js/main.ac4456a0.js"
+    "static/js/main.20260ad3.js"
   ]
 }
