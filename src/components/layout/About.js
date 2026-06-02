@@ -1,44 +1,51 @@
 import React from "react";
 import jennyImage from "../../assets/Jenny.jpg";
+import SectionCard from "./SectionCard";
 
 function About() {
     return (
-        <div className="relative lg:row-span-2 h-full">
-            <div className="absolute inset-px rounded-lg bg-white"></div>
-            <div className="relative flex h-full shadow-md flex-col overflow-hidden rounded-lg">
-                <div className="px-6 pt-6 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                    <p className="mt-2 text-3xl font-medium text-gray-950 max-lg:text-center">
-                        About Me
-                    </p>
-                    <div className="my-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
+        <SectionCard className="h-full lg:row-span-2">
+            <div className="flex h-full flex-col overflow-hidden">
+                <div className="px-6 pt-6 sm:px-8 sm:pt-8">
+                    <h2 className="section-heading">About Me</h2>
+                    <div className="section-copy mt-4 space-y-4">
                         <p>
-                            I am a <strong>front-end developer</strong> with
-                            experience in <strong>QA automation</strong> using{" "}
-                            <strong>Express</strong>,{" "}
-                            <strong>JavaScript</strong>, and{" "}
-                            <strong>Cypress.io</strong>. Early in my career,
-                            I've embraced both traditional development practices
-                            and modern <strong>AI-assisted workflows</strong> to
-                            enhance productivity. <br />
-                            I'm passionate about creating{" "}
-                            <strong>intuitive interfaces</strong> while
-                            continuously exploring
-                            <strong> emerging technologies</strong> that reshape
-                            our development landscape.
+                            I&apos;m a junior front-end developer with
+                            experience in React, Vue, JavaScript, and QA
+                            automation. I enjoy turning rough ideas into clean,
+                            responsive interfaces that feel easy to use.
+                        </p>
+                        <p>
+                            My background in testing helps me approach UI work
+                            carefully: accessibility, layout consistency, and
+                            clear feedback matter just as much as shipping the
+                            feature itself.
                         </p>
                     </div>
                 </div>
-                <div className="relative bg-gradient-to-t from-violet-950/80 to-violet-100/10 w-full h-full pt-6 flex-grow pb-6 flex justify-center items-center">
-                    <div className="h-72 w-72 border-2 border-indigo-950 rounded-full overflow-hidden">
-                        <img
-                            className="object-cover w-full h-full"
-                            src={jennyImage}
-                            alt="Jenny"
-                        />
-                    </div>
+
+                <div className="relative mt-6 flex flex-1 items-center justify-center overflow-hidden bg-[linear-gradient(180deg,rgba(241,245,249,0.25),rgba(226,232,240,0.72))] px-6 pb-8 pt-2">
+                    <div
+                        aria-hidden="true"
+                        className="absolute inset-x-8 top-5 h-20 rounded-full bg-[radial-gradient(circle,_rgba(90,117,146,0.16),_transparent_68%)] blur-2xl"
+                    />
+                    <figure className="relative space-y-4">
+                        <div className="mx-auto h-64 w-64 overflow-hidden rounded-full border-[10px] border-white/80 shadow-[0_28px_60px_rgba(15,23,42,0.18)] sm:h-72 sm:w-72">
+                            <img
+                                className="h-full w-full object-cover"
+                                src={jennyImage}
+                                alt="Portrait of Jenny Deygin"
+                                loading="lazy"
+                            />
+                        </div>
+                        <figcaption className="text-center text-sm font-medium text-slate-500">
+                            Interested in UI polish, data visualisation, and
+                            interactive mapping.
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
-        </div>
+        </SectionCard>
     );
 }
 

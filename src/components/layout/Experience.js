@@ -1,55 +1,53 @@
 import React from "react";
+import SectionCard from "./SectionCard";
 
 function Experience() {
     return (
-        <div className="relative lg:row-start-2">
-            <div className="absolute inset-px shadow-md rounded-lg bg-white"></div>
-            <div className="relative flex h-full flex-col overflow-hidden">
-                <div className="px-6 pt-6 pb-6 sm:px-10 sm:pt-10">
-                    <h2 className="mt-2 text-3xl font-medium text-gray-950 max-lg:text-center">
-                        Experience
-                    </h2>
-                    <div className="mt-4 max-w-lg space-y-4 text-base/7 text-gray-600 max-lg:text-center">
-                        <div>
-                            <p className="mt-2">
-                                <span className="font-bold">
-                                    Web development
-                                </span>{" "}
-                                — 5 years
-                                <br className="mb-1" />
-                                <span className="font-bold">React</span> — 3
-                                years
-                                <br className="mb-1" />
-                                <span className="font-bold">
-                                    AI-assisted workflows
-                                </span>{" "}
-                                — Using <strong>Windsurf</strong>
-                            </p>
-                        </div>
+        <SectionCard className="h-full">
+            <div className="flex h-full flex-col px-6 py-6 sm:px-8 sm:py-8">
+                <h2 className="section-heading">Experience</h2>
+                <div className="mt-5 grid gap-4">
+                    <article className="rounded-[24px] bg-slate-50 p-5 ring-1 ring-slate-200/70">
+                        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                            Current focus
+                        </p>
+                        <h3 className="mt-2 text-lg font-semibold text-slate-900">
+                            Independent front-end developer
+                        </h3>
+                        <p className="section-copy mt-2">
+                            Since 2023, I&apos;ve been building responsive
+                            marketing sites and small single-page apps for SMEs
+                            and personal brands.
+                        </p>
+                    </article>
 
-                        <div className="mt-4">
-                            <h3 className="text-lg font-bold text-gray-800">
-                                Education
-                            </h3>
-                            <p className="mt-2">
-                                Bachelor in Geography and Human Environment
-                            </p>
-                        </div>
+                    <article className="rounded-[24px] bg-slate-50 p-5 ring-1 ring-slate-200/70">
+                        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                            Foundation
+                        </p>
+                        <h3 className="mt-2 text-lg font-semibold text-slate-900">
+                            QA automation and product collaboration
+                        </h3>
+                        <p className="section-copy mt-2">
+                            My Cypress and JavaScript QA background still shapes
+                            how I work: I think about edge cases, testability,
+                            and stable user flows from the start.
+                        </p>
+                    </article>
+                </div>
 
-                        <div className="mt-4">
-                            <h3 className="text-lg font-bold text-gray-800">
-                                Interests
-                            </h3>
-                            <p className="mt-2">
-                                <strong>Data viz</strong> •
-                                <strong> UI/UX</strong> •
-                                <strong> Interactive mapping</strong>
-                            </p>
-                        </div>
-                    </div>
+                <div className="mt-6 border-t border-slate-200 pt-5">
+                    <h3 className="text-lg font-semibold text-slate-900">
+                        Education and interests
+                    </h3>
+                    <p className="section-copy mt-2">
+                        B.A. in Geography and Human Environment. I&apos;m
+                        especially drawn to data visualisation, UI/UX, and
+                        interactive mapping work.
+                    </p>
                 </div>
             </div>
-        </div>
+        </SectionCard>
     );
 }
 

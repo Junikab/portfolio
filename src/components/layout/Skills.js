@@ -1,24 +1,26 @@
 import React from "react";
 import SkillsBubbles from "../SkillsBubbles";
+import SectionCard from "./SectionCard";
 
 function Skills() {
     return (
-        <div className="relative lg:row-span-2 h-full">
-            <div className="absolute inset-px shadow-md rounded-lg bg-white"></div>
-            <div className="relative flex h-full flex-col overflow-hidden">
-                <div className="px-6 pt-6 pb-4 sm:px-10 sm:pt-10">
-                    <p className="mt-2 text-3xl font-medium text-gray-950 max-lg:text-center">
-                        Technical Skills
-                    </p>
-                    <p className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
-                        Feel free to drag and move the bubbles around :)
+        <SectionCard className="h-full lg:row-span-2">
+            <div className="flex h-full flex-col overflow-hidden">
+                <div className="px-6 pt-6 sm:px-8 sm:pt-8">
+                    <h2 className="section-heading">Technical Skills</h2>
+                    <p className="section-copy mt-3">
+                        Drag the bubbles to explore the tools, frameworks, and
+                        workflows I use most often.
                     </p>
                 </div>
-                <div>
-                    <SkillsBubbles />
+
+                <div className="flex-1 px-2 pb-2 pt-4 sm:px-4 sm:pb-4">
+                    <div className="h-full rounded-[24px] bg-slate-50/90 ring-1 ring-white">
+                        <SkillsBubbles />
+                    </div>
                 </div>
             </div>
-        </div>
+        </SectionCard>
     );
 }
 

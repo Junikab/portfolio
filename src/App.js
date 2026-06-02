@@ -1,13 +1,9 @@
 import React from "react";
 
-import Title from "./components/layout/Title";
+import PortfolioPage from "./components/layout/PortfolioPage";
 
 function App() {
-    return (
-        <div className="App">
-            <Title />
-        </div>
-    );
+    return <PortfolioPage />;
 }
 
 export default App;

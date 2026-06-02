@@ -2,9 +2,17 @@ import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 import { SKILLS, COLOR_VARIATIONS } from "../data/skillData";
 
+const DEFAULT_DIMENSIONS = { width: 400, height: 520 };
+
 // =============================================
 // UTILITY FUNCTIONS
 // =============================================
+
+function getCanvasHeight(width) {
+    if (width < 480) return 420;
+    if (width < 1024) return 480;
+    return 540;
+}
 
 // Get pointer position (works for both mouse and touch)
 function getEventPosition(e, canvas) {
@@ -72,7 +80,7 @@ function setupCanvas(canvas, context, dimensions, pixelRatio) {
     canvas.height = dimensions.height * pixelRatio;
     canvas.style.width = `${dimensions.width}px`;
     canvas.style.height = `${dimensions.height}px`;
-    context.scale(pixelRatio, pixelRatio);
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 }
 
 // =============================================
@@ -320,115 +328,100 @@ function setupInteractionHandlers(canvas, simulation, nodes, draggedNodeRef) {
 // =============================================
 
 function SkillsBubbles() {
-    // Refs for DOM elements and simulation state
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
-    const simulationRef = useRef(null); // Stores the D3 simulation instance
-    const draggedNodeRef = useRef(null); // Stores the node currently being dragged
-    const nodesRef = useRef([]); // Stores the node data array
+    const simulationRef = useRef(null);
+    const draggedNodeRef = useRef(null);
+    const nodesRef = useRef([]);
 
-    // State for component dimensions, responsive to container size
-    const [dimensions, setDimensions] = useState({ width: 400, height: 600 });
+    const [dimensions, setDimensions] = useState(DEFAULT_DIMENSIONS);
+    const { width, height } = dimensions;
 
-    // Effect for handling container resize
     useEffect(() => {
         const container = containerRef.current;
         if (!container) return;
 
         const updateSize = () => {
+            const width = container.offsetWidth || DEFAULT_DIMENSIONS.width;
             setDimensions({
-                width: container.offsetWidth,
-                height: 600, // Keep height fixed or make responsive too
+                width,
+                height: getCanvasHeight(width),
             });
         };
 
-        updateSize(); // Initial size check
+        updateSize();
 
-        // Debounced resize handler for performance
-        let timeoutId;
-        const handleResize = () => {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(updateSize, 150); // Adjust debounce delay as needed
-        };
+        if (typeof ResizeObserver !== "undefined") {
+            const observer = new ResizeObserver(updateSize);
+            observer.observe(container);
+            return () => observer.disconnect();
+        }
 
-        window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-            clearTimeout(timeoutId);
-        };
+        window.addEventListener("resize", updateSize);
+        return () => window.removeEventListener("resize", updateSize);
     }, []);
 
-    // Effect for creating/updating nodes when dimensions change
     useEffect(() => {
-        if (!dimensions.width) return;
+        if (!width) return;
 
-        const sizeFactor = 7.0; // Adjust to scale bubble sizes
+        const sizeFactor = 7.0;
         nodesRef.current = createNodesFromSkills(
             SKILLS,
-            dimensions.width,
-            dimensions.height,
+            width,
+            height,
             sizeFactor
         );
 
-        // If simulation exists, update nodes and restart
         if (simulationRef.current) {
             simulationRef.current.nodes(nodesRef.current);
-            simulationRef.current.alpha(0.3).restart(); // Reheat simulation
+            simulationRef.current.alpha(0.3).restart();
         }
-    }, [dimensions.width, dimensions.height]);
+    }, [height, width]);
 
-    // Effect for setting up canvas, simulation, and interactions
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas?.getContext("2d");
+        const currentDimensions = { width, height };
         if (
             !canvas ||
             !context ||
-            !dimensions.width ||
+            !width ||
             nodesRef.current.length === 0
         )
             return;
 
         const pixelRatio = window.devicePixelRatio || 1;
-        const centerX = dimensions.width / 2;
-        const centerY = dimensions.height / 2;
+        const centerX = width / 2;
+        const centerY = height / 2;
 
-        // Setup canvas resolution
-        setupCanvas(canvas, context, dimensions, pixelRatio);
-
-        // Calculate drawing boundaries
-        const boundary = calculateBoundary(centerX, centerY, dimensions);
-
-        // Define the rendering loop function
+        setupCanvas(canvas, context, currentDimensions, pixelRatio);
+        const boundary = calculateBoundary(centerX, centerY, currentDimensions);
         const renderBubbles = createRenderFunction(
             context,
             nodesRef.current,
-            dimensions,
+            currentDimensions,
             boundary
         );
 
-        // Setup or update the D3 simulation
         if (!simulationRef.current) {
-            // Only create simulation once
             simulationRef.current = setupSimulation(
                 nodesRef.current,
                 centerX,
                 centerY,
                 renderBubbles
             );
-            initializeSimulation(simulationRef.current); // Settle initial layout
+            initializeSimulation(simulationRef.current);
         } else {
-            // Update existing simulation parameters
             simulationRef.current
                 .force("center", d3.forceCenter(centerX, centerY).strength(0.1))
                 .force("x", d3.forceX(centerX).strength(0.05))
                 .force("y", d3.forceY(centerY).strength(0.05))
-                .on("tick", renderBubbles); // Ensure tick handler is up-to-date
+                .on("tick", renderBubbles)
+                .alpha(0.25)
+                .restart();
         }
 
-        renderBubbles(); // Initial render
-
-        // Setup interaction handlers and get cleanup function
+        renderBubbles();
         const cleanupInteractions = setupInteractionHandlers(
             canvas,
             simulationRef.current,
@@ -436,24 +429,25 @@ function SkillsBubbles() {
             draggedNodeRef
         );
 
-        // Return cleanup function for this effect
         return () => {
             cleanupInteractions();
-            // Stop simulation directly here
             if (simulationRef.current) {
                 simulationRef.current.stop();
             }
         };
-
-        // Rerun this effect if dimensions change (width/height) to reconfigure canvas/simulation
-    }, [dimensions.width, dimensions.height]);
+    }, [height, width]);
 
     return (
         <div
             ref={containerRef}
-            className="w-full h-full overflow-hidden"
+            className="h-full min-h-[420px] w-full overflow-hidden rounded-[24px]"
         >
-            <canvas ref={canvasRef} className="w-full h-full block" />
+            <canvas
+                ref={canvasRef}
+                className="block h-full w-full"
+                role="img"
+                aria-label="Interactive skills bubble chart"
+            />
         </div>
     );
 }

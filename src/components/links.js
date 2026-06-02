@@ -4,24 +4,28 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 function Links() {
     return (
-    <div className="flex px-6 space-x-8 items-center">
-        <a
-            href="https://linkedin.com/in/jennydeygin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 bg-white rounded-xlg hover:text-blue-800 transition-colors"
-        >
-            <FaLinkedin size={40} />
-        </a>
-        <a
-            href="https://github.com/junikab"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-800 bg-white rounded-full hover:text-gray-600 transition-colors"
-        >
-            <FaGithub size={40} />
-        </a>
-    </div>
+        <div className="flex flex-wrap gap-3">
+            <a
+                href="https://linkedin.com/in/jennydeygin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LinkedIn profile"
+                className="social-link"
+            >
+                <FaLinkedin size={18} />
+                <span>LinkedIn</span>
+            </a>
+            <a
+                href="https://github.com/junikab"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open GitHub profile"
+                className="social-link"
+            >
+                <FaGithub size={18} />
+                <span>GitHub</span>
+            </a>
+        </div>
     );
 }
 

@@ -2,54 +2,72 @@ import React from "react";
 import ReactLogo from "../reactLogo";
 import JsLogo from "../jsLogo";
 
-function Header() {
-    const Title = () => (
-        <div className="flex flex-col justify-center items-center">
-            <h2 className="text-4xl capitalize text-white sm:text-5xl text-center">
-                Jenny Deygin
-            </h2>
-            <h2 className="mt-3 text-3xl text-gray-100 text-center">
-                Front End Developer
-            </h2>
+function LogoBadge({ children, className = "" }) {
+    return (
+        <div
+            aria-hidden="true"
+            className={`mx-auto flex h-24 w-24 items-center justify-center rounded-[28px] border border-white/10 bg-white/10 p-4 shadow-[0_22px_55px_rgba(15,23,42,0.3)] backdrop-blur ${className}`}
+        >
+            {children}
         </div>
     );
+}
 
-
+function Header() {
     return (
-        <div className="mx-auto bg-gradient-to-r from-indigo-500/70 via-purple-500/70 to-pink-500/70 shadow-md rounded-lg py-10">
-            {/* Desktop Layout (3-column grid) - hidden on mobile */}
-            <div className="hidden md:grid md:grid-cols-3">
-                <div className="flex justify-center items-center">
-                    <div className="w-24 h-24">
+        <header className="surface-card overflow-hidden border-0 bg-slate-950 text-slate-50 shadow-[0_32px_80px_rgba(15,23,42,0.22)]">
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.28),_transparent_26%),linear-gradient(135deg,_rgba(51,65,85,0.95),_rgba(15,23,42,1)_60%)]"
+            />
+            <div className="relative grid gap-8 px-6 py-8 sm:px-8 sm:py-10 lg:grid-cols-[7rem_minmax(0,1fr)_7rem] lg:items-center lg:px-10">
+                <div className="hidden lg:block">
+                    <LogoBadge>
                         <JsLogo />
+                    </LogoBadge>
+                </div>
+
+                <div className="text-center lg:text-left">
+                    <h1 className="font-display text-5xl leading-none text-white sm:text-6xl">
+                        Jenny Deygin
+                    </h1>
+                    <p className="mt-3 text-xl font-medium text-slate-200 sm:text-2xl">
+                        Front-end developer
+                    </p>
+                    <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300 lg:mx-0">
+                        Junior front-end developer with a QA automation
+                        background, building accessible React and Vue
+                        interfaces for small businesses and product teams.
+                    </p>
+                    <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-slate-300 lg:justify-start">
+                        <span>Sydney, Australia</span>
+                        <span className="hidden text-slate-500 sm:inline">
+                            •
+                        </span>
+                        <span>React, Tailwind CSS, D3</span>
+                        <span className="hidden text-slate-500 sm:inline">
+                            •
+                        </span>
+                        <span>Responsive UI and QA-minded workflows</span>
                     </div>
                 </div>
 
-                <Title />
-
-                <div className="flex justify-center items-center">
-                    <div className="w-24 h-24">
+                <div className="hidden lg:block">
+                    <LogoBadge className="ml-auto">
                         <ReactLogo />
-                    </div>
+                    </LogoBadge>
+                </div>
+
+                <div className="flex items-center justify-center gap-4 lg:hidden">
+                    <LogoBadge className="h-20 w-20 rounded-[22px] p-3">
+                        <JsLogo />
+                    </LogoBadge>
+                    <LogoBadge className="h-20 w-20 rounded-[22px] p-3">
+                        <ReactLogo />
+                    </LogoBadge>
                 </div>
             </div>
-
-            {/* Mobile Layout (stacked) - hidden on desktop */}
-            <div className="flex flex-col md:hidden">
-                <div className="mb-6">
-                    <Title />
-                </div>
-
-                <div className="flex justify-center items-center space-x-8">
-                    <div className="w-20 h-20">
-                        <JsLogo />
-                    </div>
-                    <div className="w-20 h-20">
-                        <ReactLogo />
-                    </div>
-                </div>
-            </div>
-        </div>
+        </header>
     );
 }
 

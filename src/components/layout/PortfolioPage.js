@@ -9,31 +9,28 @@ import Projects from "./Projects";
 import Footer from "./Footer";
 import WidthContainer from "./WidthContainer";
 
-function Title() {
+function PortfolioPage() {
     return (
-        <div className="bg-gradient-to-tl from-neutral-100 to-neutral-300 pt-10 pb-24 sm:pt-10 sm:pb-10">
-            <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <main className="relative overflow-hidden px-4 pb-16 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-20">
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(circle_at_top_left,_rgba(83,114,146,0.18),_transparent_32%),radial-gradient(circle_at_top_right,_rgba(214,153,92,0.16),_transparent_24%)]"
+            />
+            <div className="mx-auto max-w-7xl space-y-6">
                 <WidthContainer>
                     <Header />
                 </WidthContainer>
 
-                {/* Mobile layout - components stacked in desired order */}
-                <div className="mt-10 flex flex-col gap-4 lg:hidden">
-                    <SocialLinks />
+                <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)_minmax(0,1fr)]">
                     <About />
-                    <Skills />
-                    <Experience />
-                </div>
-                <div className="hidden mt-10 lg:grid lg:grid-cols-3 lg:gap-x-4 text-justify">
-                    <About />
-                    <div className="flex-col space-y-4">
+                    <div className="flex flex-col gap-6">
                         <SocialLinks />
                         <Experience />
                     </div>
                     <Skills />
                 </div>
 
-                <WidthContainer className="mt-10">
+                <WidthContainer className="pt-2">
                     <Projects />
                 </WidthContainer>
 
@@ -41,8 +38,8 @@ function Title() {
                     <Footer />
                 </WidthContainer>
             </div>
-        </div>
+        </main>
     );
 }
 
-export default Title;
+export default PortfolioPage;

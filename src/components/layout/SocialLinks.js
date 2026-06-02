@@ -2,31 +2,25 @@ import React from "react";
 
 import DownloadResume from "../Resume";
 import Links from "../links";
+import SectionCard from "./SectionCard";
 
 function SocialLinks() {
     return (
-        <div className="relative lg:row-start-1">
-            <div className="shadow-md rounded-lg bg-white max-lg:text-center">
-                <div className="relative flex flex-col overflow-hidden px-4 pt-6 space-y-4">
-                    <div className="px-6 pt-6">
-                        <p className="text-3xl font-medium text-gray-950">
-                            Contact me
-                        </p>
-                    </div>
-                    <div className="flex flex-col space-y-4 pb-6 text-gray-600">
-                        <div className="px-6">
-                            <p>Contact info is in my resume.</p>
-                        </div>
-                        <div className="px-6">
-                            <DownloadResume colorScheme="default" />
-                        </div>
-                        <div className="flex max-lg:justify-center">
-                            <Links />
-                        </div>
-                    </div>
+        <SectionCard>
+            <div className="flex h-full flex-col px-6 py-6 sm:px-8 sm:py-8">
+                <h2 className="section-heading">Contact</h2>
+                <p className="section-copy mt-3">
+                    The resume includes my phone number, email, and current
+                    experience. If you want a quick first stop, LinkedIn and
+                    GitHub are right below.
+                </p>
+
+                <div className="mt-6 flex flex-col gap-4">
+                    <DownloadResume colorScheme="default" />
+                    <Links />
                 </div>
             </div>
-        </div>
+        </SectionCard>
     );
 }
 
