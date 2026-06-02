@@ -1,4 +1,4 @@
-import portfolioMark from "../assets/logo.webp";
+import finallyScreanshot from "../assets/finallyScreanshot.png";
 import lightsOutImage from "../assets/lightsOut.png";
 import yelpcampImage from "../assets/yelpCamp.png";
 import yahtzeeImage from "../assets/yahtzee.png";
@@ -9,15 +9,15 @@ import jennysFlowersImage from "../assets/jennysFlowers.png";
 const projectsData = [
     {
         id: 1,
-        title: "Personal Portfolio",
+        title: "Finally",
         description:
-            "Responsive portfolio built with React, Tailwind CSS, and a custom D3 skills canvas to showcase projects and experience.",
-        image: portfolioMark,
-        link: "https://github.com/junikab/portfolio",
+            "AI-assisted trading workspace demo and chat-driven actions.",
+        image: finallyScreanshot,
+        link: "https://github.com/junikab/finally",
         linkLabel: "View source",
-        category: "Portfolio",
+        category: "FinTech demo",
         year: "2025",
-        tech: ["React", "Tailwind CSS", "D3.js", "GitHub Pages"],
+        tech: ["Python", "TS", "CSS", "Agentic Coding"],
     },
     {
         id: 2,
