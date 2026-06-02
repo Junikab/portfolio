@@ -6,7 +6,7 @@ import SectionCard from "./SectionCard";
 
 function SocialLinks() {
     return (
-        <SectionCard>
+        <SectionCard className="h-full">
             <div className="flex h-full flex-col px-6 py-6 sm:px-8 sm:py-8">
                 <h2 className="section-heading">Contact</h2>
                 <p className="section-copy mt-3">
@@ -15,7 +15,7 @@ function SocialLinks() {
                     GitHub are right below.
                 </p>
 
-                <div className="mt-6 flex flex-col gap-4">
+                <div className="mt-6 flex flex-col gap-4 sm:mt-auto sm:pt-6">
                     <DownloadResume colorScheme="default" />
                     <Links />
                 </div>

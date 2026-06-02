@@ -4,7 +4,7 @@ import SectionCard from "./SectionCard";
 
 function About() {
     return (
-        <SectionCard className="h-full lg:row-span-2">
+        <SectionCard className="h-full">
             <div className="flex h-full flex-col overflow-hidden">
                 <div className="px-6 pt-6 sm:px-8 sm:pt-8">
                     <h2 className="section-heading">About Me</h2>
@@ -24,13 +24,13 @@ function About() {
                     </div>
                 </div>
 
-                <div className="relative mt-6 flex flex-1 items-center justify-center overflow-hidden bg-[linear-gradient(180deg,rgba(241,245,249,0.25),rgba(226,232,240,0.72))] px-6 pb-8 pt-2">
+                <div className="relative mt-4 flex flex-1 items-center justify-center overflow-hidden bg-[linear-gradient(180deg,rgba(241,245,249,0.25),rgba(226,232,240,0.72))] px-6 pb-6 pt-2">
                     <div
                         aria-hidden="true"
                         className="absolute inset-x-8 top-5 h-20 rounded-full bg-[radial-gradient(circle,_rgba(90,117,146,0.16),_transparent_68%)] blur-2xl"
                     />
                     <figure className="relative space-y-4">
-                        <div className="mx-auto h-64 w-64 overflow-hidden rounded-full border-[10px] border-white/80 shadow-[0_28px_60px_rgba(15,23,42,0.18)] sm:h-72 sm:w-72">
+                        <div className="mx-auto h-52 w-52 overflow-hidden rounded-full border-[8px] border-white/80 shadow-[0_24px_50px_rgba(15,23,42,0.16)] sm:h-60 sm:w-60">
                             <img
                                 className="h-full w-full object-cover"
                                 src={jennyImage}
@@ -38,7 +38,7 @@ function About() {
                                 loading="lazy"
                             />
                         </div>
-                        <figcaption className="text-center text-sm font-medium text-slate-500">
+                        <figcaption className="text-center text-sm font-medium leading-6 text-slate-500">
                             Interested in UI polish, data visualisation, and
                             interactive mapping.
                         </figcaption>

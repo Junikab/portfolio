@@ -2,16 +2,16 @@ import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 import { SKILLS, COLOR_VARIATIONS } from "../data/skillData";
 
-const DEFAULT_DIMENSIONS = { width: 400, height: 520 };
+const DEFAULT_DIMENSIONS = { width: 400, height: 440 };
 
 // =============================================
 // UTILITY FUNCTIONS
 // =============================================
 
 function getCanvasHeight(width) {
-    if (width < 480) return 420;
-    if (width < 1024) return 480;
-    return 540;
+    if (width < 480) return 360;
+    if (width < 1024) return 400;
+    return 440;
 }
 
 // Get pointer position (works for both mouse and touch)
@@ -46,16 +46,17 @@ function findNodeUnderPointer(x, y, nodes) {
 
 // Create nodes from skill data
 function createNodesFromSkills(skills, width, height, sizeFactor) {
-    const centerX = width / 2;
-    const centerY = height / 2;
+    const horizontalPadding = width * 0.08;
+    const verticalPadding = height * 0.08;
 
     return skills.map((skill) => ({
         id: skill.id,
         group: skill.group,
         value: skill.value,
         radius: Math.sqrt(skill.value) * sizeFactor,
-        x: centerX + (Math.random() - 0.5) * width * 0.6, // Random initial positions
-        y: centerY + (Math.random() - 0.5) * height * 0.6,
+        // Seed nodes across most of the canvas so the layout uses the full area.
+        x: horizontalPadding + Math.random() * (width - horizontalPadding * 2),
+        y: verticalPadding + Math.random() * (height - verticalPadding * 2),
         vx: 0, // Initial velocity
         vy: 0,
     }));
@@ -63,7 +64,7 @@ function createNodesFromSkills(skills, width, height, sizeFactor) {
 
 // Calculate the boundary for nodes
 function calculateBoundary(centerX, centerY, dimensions) {
-    const margin = 0.15; // 15% margin from edges
+    const margin = 0.08;
     const effectiveWidth = dimensions.width * (1 - margin);
     const effectiveHeight = dimensions.height * (1 - margin);
     return {
@@ -210,8 +211,8 @@ function wrapText(context, text, maxWidth) {
 function setupSimulation(nodes, centerX, centerY, tickHandler) {
     return d3
         .forceSimulation(nodes)
-        .force("center", d3.forceCenter(centerX, centerY).strength(0.1)) // Pull towards center
-        .force("charge", d3.forceManyBody().strength(-40)) // Repel nodes from each other
+        .force("center", d3.forceCenter(centerX, centerY).strength(0.04))
+        .force("charge", d3.forceManyBody().strength(-55))
         .force(
             "collide", // Prevent nodes from overlapping
             d3
@@ -220,8 +221,8 @@ function setupSimulation(nodes, centerX, centerY, tickHandler) {
                 .strength(0.9) // Strong collision force
                 .iterations(3) // More iterations for better collision resolution
         )
-        .force("x", d3.forceX(centerX).strength(0.05)) // Gentle pull towards center X
-        .force("y", d3.forceY(centerY).strength(0.05)) // Gentle pull towards center Y
+        .force("x", d3.forceX(centerX).strength(0.02))
+        .force("y", d3.forceY(centerY).strength(0.02))
         .velocityDecay(0.4) // How quickly nodes slow down
         .alphaDecay(0.01) // How quickly simulation cools down
         .on("tick", tickHandler); // Function to call on each simulation step
@@ -343,9 +344,11 @@ function SkillsBubbles() {
 
         const updateSize = () => {
             const width = container.offsetWidth || DEFAULT_DIMENSIONS.width;
+            const parentHeight = container.parentElement?.offsetHeight || 0;
+            const responsiveHeight = getCanvasHeight(width);
             setDimensions({
                 width,
-                height: getCanvasHeight(width),
+                height: Math.max(parentHeight, responsiveHeight),
             });
         };
 
@@ -413,9 +416,9 @@ function SkillsBubbles() {
             initializeSimulation(simulationRef.current);
         } else {
             simulationRef.current
-                .force("center", d3.forceCenter(centerX, centerY).strength(0.1))
-                .force("x", d3.forceX(centerX).strength(0.05))
-                .force("y", d3.forceY(centerY).strength(0.05))
+                .force("center", d3.forceCenter(centerX, centerY).strength(0.04))
+                .force("x", d3.forceX(centerX).strength(0.02))
+                .force("y", d3.forceY(centerY).strength(0.02))
                 .on("tick", renderBubbles)
                 .alpha(0.25)
                 .restart();
@@ -440,7 +443,7 @@ function SkillsBubbles() {
     return (
         <div
             ref={containerRef}
-            className="h-full min-h-[420px] w-full overflow-hidden rounded-[24px]"
+            className="h-full min-h-[360px] w-full overflow-hidden rounded-[24px]"
         >
             <canvas
                 ref={canvasRef}
