@@ -12,12 +12,12 @@ export const SKILLS = [
     { id: "MongoDB", group: "database", value: 40 },
     { id: "Tailwind", group: "styling", value: 35 },
     { id: "Git", group: "tool", value: 30 },
-    { id: "Cypress.io", group: "testing", value: 40 },
+    { id: "Cypress.io", group: "testing", value: 30 },
     { id: "Material UI", group: "styling", value: 42 },
     { id: "REST", group: "api", value: 35 },
     { id: "Agile", group: "methodology", value: 32 },
     { id: "Bootstrap", group: "styling", value: 35 },
-    { id: "Vue.js", group: "framework", value: 38 },
+    { id: "Vue.js", group: "framework", value: 40 },
     { id: "EJS", group: "template", value: 30 },
     { id: "D3.js", group: "library", value: 35 },
     { id: "Responsive Design", group: "methodology", value: 42 },
@@ -26,6 +26,8 @@ export const SKILLS = [
     { id: "QA Automation", group: "testing", value: 40 },
     { id: "GIS", group: "domain", value: 30 },
     { id: "Windsurf IDE", group: "ai_tools", value: 30 },
+    { id: "Codex", group: "ai_tools", value: 40 },
+
 ];
 
 // Color scheme for different skill groups
