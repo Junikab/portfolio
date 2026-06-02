@@ -23,9 +23,13 @@ function PortfolioPage() {
 
                 <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)_minmax(0,1fr)]">
                     <About />
-                    <div className="flex flex-col gap-6">
-                        <SocialLinks />
-                        <Experience />
+                    <div className="flex h-full flex-col gap-6 lg:row-span-2">
+                        <div className="shrink-0">
+                            <SocialLinks />
+                        </div>
+                        <div className="min-h-0 flex-1">
+                            <Experience />
+                        </div>
                     </div>
                     <Skills />
                 </div>
