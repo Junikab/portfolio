@@ -10,10 +10,38 @@ function SocialLinks() {
             <div className="flex h-full flex-col px-6 py-6 sm:px-8 sm:py-8">
                 <h2 className="section-heading">Contact</h2>
                 <p className="section-copy mt-3">
-                    The resume includes my phone number, email, and current
-                    experience. If you want a quick first stop, LinkedIn and
-                    GitHub are right below.
+                    My resume has the essentials, and you can find me on
+                    LinkedIn and GitHub right below.
                 </p>
+
+                <div className="mt-6">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                        Currently Open To
+                    </p>
+                    <ul className="mt-3 space-y-2 text-sm font-medium text-slate-700">
+                        <li className="flex items-start gap-2">
+                            <span
+                                aria-hidden="true"
+                                className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-400"
+                            />
+                            <span>Junior front-end opportunities</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <span
+                                aria-hidden="true"
+                                className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-400"
+                            />
+                            <span>Thoughtful UI and product work</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <span
+                                aria-hidden="true"
+                                className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-400"
+                            />
+                            <span>Data visualisation and mapping projects</span>
+                        </li>
+                    </ul>
+                </div>
 
                 <div className="mt-5 flex flex-col gap-4">
                     <DownloadResume colorScheme="default" />

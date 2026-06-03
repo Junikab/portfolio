@@ -33,22 +33,16 @@ function Header() {
                     <p className="mt-3 text-xl font-medium text-slate-200 sm:text-2xl">
                         Front-end developer
                     </p>
-                    <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300">
-                        Junior front-end developer with a QA automation
-                        background, building accessible React and Vue
-                        interfaces for small businesses and product teams.
-                    </p>
-                    <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-slate-300">
-                        <span>Sydney, Australia</span>
-                        <span className="hidden text-slate-500 sm:inline">
+                    {/* <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300">
+                        Front-end developer with a QA automation
+                        background, building accessible interfaces for small businesses and product teams.
+                    </p> */}
+                    {/* <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-slate-300"> */}
+                        {/* <span>Sydney, Australia</span> */}
+                        {/* <span className="hidden text-slate-500 sm:inline">
                             •
-                        </span>
-                        <span>React, Tailwind CSS, D3</span>
-                        <span className="hidden text-slate-500 sm:inline">
-                            •
-                        </span>
-                        <span>Responsive UI and QA-minded workflows</span>
-                    </div>
+                        </span> */}
+                    {/* </div> */}
 
                 </div>
 
