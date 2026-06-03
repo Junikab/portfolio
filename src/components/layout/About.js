@@ -29,7 +29,7 @@ function About() {
                     </div>
                 </div>
 
-                <div className="relative mt-4 flex flex-1 items-center justify-center overflow-hidden bg-[linear-gradient(180deg,rgba(241,245,249,0.25),rgba(226,232,240,0.72))] px-6 pb-6 pt-2">
+                <div className="relative mt-4 flex flex-1 items-center justify-center overflow-hidden bg-[linear-gradient(rgb(255,255,255),rgba(15,23,42,0.72))] px-6 pb-6 pt-2">
                     <div
                         aria-hidden="true"
                         className="absolute inset-x-8 top-5 h-20 rounded-full bg-[radial-gradient(circle,_rgba(90,117,146,0.16),_transparent_68%)] blur-2xl"
