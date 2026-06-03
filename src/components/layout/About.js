@@ -10,16 +10,21 @@ function About() {
                     <h2 className="section-heading">About Me</h2>
                     <div className="section-copy mt-4 space-y-4">
                         <p>
-                            I&apos;m a junior front-end developer with
-                            experience in React, Vue, JavaScript, and QA
-                            automation. I enjoy turning rough ideas into clean,
-                            responsive interfaces that feel easy to use.
+                            I&apos;m a junior front-end developer who enjoys
+                            building clean, responsive interfaces with React,
+                            Vue, and JavaScript. I like taking an idea from a
+                            rough concept to something clear, polished, and
+                            genuinely pleasant to use.
                         </p>
                         <p>
-                            My background in testing helps me approach UI work
-                            carefully: accessibility, layout consistency, and
-                            clear feedback matter just as much as shipping the
-                            feature itself.
+                            My background in QA automation taught me to pay
+                            attention to the details that shape a good
+                            experience, from layout consistency and
+                            accessibility to the small interactions that make a
+                            page feel finished. I&apos;m especially interested
+                            in data visualisation, and interactive
+                            mapping, where thoughtful design can make complex
+                            information easier to understand.
                         </p>
                     </div>
                 </div>
@@ -38,10 +43,6 @@ function About() {
                                 loading="lazy"
                             />
                         </div>
-                        <figcaption className="text-center text-sm font-medium leading-6 text-slate-500">
-                            Interested in UI polish, data visualisation, and
-                            interactive mapping.
-                        </figcaption>
                     </figure>
                 </div>
             </div>

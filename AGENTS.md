@@ -57,3 +57,9 @@
 - Preserve semantic HTML: headings, sections, lists, and footer markup should be valid.
 - If you change layout or canvas behavior, verify both mobile and desktop structure.
 - Update `PLAN.md` whenever scope changes or a major task is completed.
+
+## Validation Rules
+  - For text-only or content-only changes, do not run tests or build by default.
+  - For style-only changes, run `npm run build` only if the change affects layout broadly.
+  - For component logic, data shape, or interactive behavior changes, run relevant tests.
+  - Run full validation before deploy or when requested.
