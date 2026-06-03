@@ -15,6 +15,11 @@ test("renders the portfolio hero and project section", () => {
     expect(
         screen.getByRole("heading", { name: /My Projects/i })
     ).toBeInTheDocument();
-    expect(screen.getByText(/Personal Portfolio/i)).toBeInTheDocument();
+    expect(
+        screen.getByRole("heading", { name: /About Me/i })
+    ).toBeInTheDocument();
+    expect(
+        screen.getByRole("heading", { name: /Contact/i })
+    ).toBeInTheDocument();
     expect(screen.getByTestId("skills-bubbles")).toBeInTheDocument();
 });

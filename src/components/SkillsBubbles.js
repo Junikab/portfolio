@@ -151,8 +151,8 @@ function drawNodeText(context, node) {
     context.shadowColor = "transparent";
 
     // Calculate font size based on bubble radius (within limits)
-    const fontSize = Math.min(Math.max(10, node.radius * 0.45), 14);
-    context.font = `${fontSize}px bold sans-serif`;
+    const fontSize = Math.min(Math.max(10, node.radius * 0.35), 18);
+    context.font = `500 ${fontSize}px "Libre Franklin", sans-serif`;
     context.textAlign = "center";
     context.textBaseline = "middle";
     context.fillStyle = "#1e293b"; // Dark slate color for good contrast

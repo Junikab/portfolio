@@ -16,7 +16,7 @@ const projectsData = [
         link: "https://github.com/junikab/finally",
         linkLabel: "View source",
         category: "FinTech demo",
-        year: "2025",
+        year: "2026",
         tech: ["Python", "TS", "CSS", "Agentic Coding"],
     },
     {

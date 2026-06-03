@@ -15,7 +15,7 @@ function SocialLinks() {
                     GitHub are right below.
                 </p>
 
-                <div className="mt-6 flex flex-col gap-4 sm:mt-auto sm:pt-6">
+                <div className="mt-5 flex flex-col gap-4">
                     <DownloadResume colorScheme="default" />
                     <Links />
                 </div>

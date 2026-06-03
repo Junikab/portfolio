@@ -3,17 +3,6 @@ import ReactLogo from "../reactLogo";
 import JsLogo from "../jsLogo";
 import OpenAILogo from "../openaiLogo";
 
-function LogoBadge({ children, className = "" }) {
-    return (
-        <div
-            aria-hidden="true"
-            className={`mx-auto flex h-24 w-24 items-center justify-center rounded-[28px] border border-white/10 bg-white/10 p-4 shadow-[0_22px_55px_rgba(15,23,42,0.3)] backdrop-blur ${className}`}
-        >
-            {children}
-        </div>
-    );
-}
-
 function Header() {
     return (
         <header className="surface-card overflow-hidden border-0 bg-slate-950 text-slate-50 shadow-[0_32px_80px_rgba(15,23,42,0.22)]">
@@ -23,12 +12,18 @@ function Header() {
             />
             <div className="relative grid gap-8 px-6 py-8 sm:px-8 sm:py-10 lg:grid-cols-[7rem_minmax(0,1fr)_7rem] lg:items-center lg:px-10">
                 <div className="hidden lg:flex lg:flex-col lg:items-center lg:gap-4">
-                    <LogoBadge className="h-16 w-16 rounded-[22px] p-3 text-white/95">
+                    <div
+                        aria-hidden="true"
+                        className="flex h-16 w-16 items-center justify-center text-white/95"
+                    >
                         <OpenAILogo />
-                    </LogoBadge>
-                    <LogoBadge>
+                    </div>
+                    <div
+                        aria-hidden="true"
+                        className="flex h-24 w-24 items-center justify-center"
+                    >
                         <JsLogo />
-                    </LogoBadge>
+                    </div>
                 </div>
 
                 <div className="text-center">
@@ -58,21 +53,33 @@ function Header() {
                 </div>
 
                 <div className="hidden lg:block">
-                    <LogoBadge className="ml-auto">
+                    <div
+                        aria-hidden="true"
+                        className="ml-auto flex h-24 w-24 items-center justify-center"
+                    >
                         <ReactLogo />
-                    </LogoBadge>
+                    </div>
                 </div>
 
                 <div className="flex items-center justify-center gap-4 lg:hidden">
-                    <LogoBadge className="h-20 w-20 rounded-[22px] p-3 text-white/95">
+                    <div
+                        aria-hidden="true"
+                        className="flex h-20 w-20 items-center justify-center text-white/95"
+                    >
                         <OpenAILogo />
-                    </LogoBadge>
-                    <LogoBadge className="h-20 w-20 rounded-[22px] p-3">
+                    </div>
+                    <div
+                        aria-hidden="true"
+                        className="flex h-20 w-20 items-center justify-center"
+                    >
                         <JsLogo />
-                    </LogoBadge>
-                    <LogoBadge className="h-20 w-20 rounded-[22px] p-3">
+                    </div>
+                    <div
+                        aria-hidden="true"
+                        className="flex h-20 w-20 items-center justify-center"
+                    >
                         <ReactLogo />
-                    </LogoBadge>
+                    </div>
                 </div>
             </div>
         </header>

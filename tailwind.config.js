@@ -5,8 +5,8 @@ module.exports = {
         extend: {
             keyframes: {
                 float: {
-                    "0%, 100%": { transform: "translateY(0)" },
-                    "50%": { transform: "translateY(-20px)" },
+                    "0%, 100%": { transform: "translateY(6px)" },
+                    "50%": { transform: "translateY(22px)" },
                 },
                 spinPulse: {
                     "0%": { transform: "rotate(0deg) scale(0.8)" },

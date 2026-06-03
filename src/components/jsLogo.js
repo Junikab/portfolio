@@ -3,14 +3,14 @@ import React from "react";
 function JsLogo() {
     return (
         <div className="">
-            <div className="flex justify-center items-center h-full">
+            <div className="flex justify-center items-center h-full ml-4 mt-10">
                 <div
                     className="animate-float"
-                    style={{ animationDelay: "1s" }}
+                    style={{ animationDelay: "0.5s" }}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 630 630"
+                        viewBox="0 0 800 800"
                         width="100"
                         height="100"
                     >

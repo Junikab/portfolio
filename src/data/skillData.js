@@ -10,7 +10,7 @@ export const SKILLS = [
     { id: "Node.js", group: "backend", value: 50 },
     { id: "Express", group: "backend", value: 30 },
     { id: "MongoDB", group: "database", value: 30 },
-    { id: "PostgreSQL", group: "database", value: 30 },
+    { id: "PostgreSQL", group: "database", value: 35 },
     { id: "Tailwind", group: "styling", value: 40 },
     { id: "Git", group: "tool", value: 60 },
     { id: "Cypress.io", group: "testing", value: 30 },
