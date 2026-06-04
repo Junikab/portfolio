@@ -84,6 +84,28 @@ function setupCanvas(canvas, context, dimensions, pixelRatio) {
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 }
 
+function parseRgbColor(color) {
+    const values = color.match(/\d+/g);
+    if (!values) return [100, 116, 139];
+    return values.map(Number);
+}
+
+function withAlpha(color, alpha) {
+    const [r, g, b] = parseRgbColor(color);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function getRelativeLuminance(color) {
+    const [r, g, b] = parseRgbColor(color).map((value) => {
+        const channel = value / 255;
+        return channel <= 0.03928
+            ? channel / 12.92
+            : ((channel + 0.055) / 1.055) ** 2.4;
+    });
+
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
 // =============================================
 // RENDERING FUNCTIONS
 // =============================================
@@ -117,7 +139,7 @@ function constrainNodeToBoundary(node, boundary) {
 function drawBubble(context, node) {
     const colors = COLOR_VARIATIONS[node.group] || COLOR_VARIATIONS.tool; // Fallback color
 
-    // Create a radial gradient for a 3D effect
+    // Create a richer radial gradient so the bubbles feel less washed out.
     const gradient = context.createRadialGradient(
         node.x - node.radius * 0.3, // Inner circle offset slightly
         node.y - node.radius * 0.3,
@@ -128,7 +150,7 @@ function drawBubble(context, node) {
     );
 
     gradient.addColorStop(0, colors.lighter);
-    gradient.addColorStop(0.7, colors.base);
+    gradient.addColorStop(0.55, colors.base);
     gradient.addColorStop(1, colors.darker);
 
     // Draw the bubble shape
@@ -136,26 +158,34 @@ function drawBubble(context, node) {
     context.arc(node.x, node.y, node.radius, 0, 2 * Math.PI);
     context.fillStyle = gradient;
 
-    // Add a subtle shadow
-    context.shadowColor = "rgba(0, 0, 0, 0.2)";
-    context.shadowBlur = 5;
-    context.shadowOffsetX = 2;
-    context.shadowOffsetY = 2;
+    context.shadowColor = withAlpha(colors.darker, 0.24);
+    context.shadowBlur = 10;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 4;
 
     context.fill();
 }
 
 // Draw text centered within a node, handling wrapping
 function drawNodeText(context, node) {
-    // Reset shadow before drawing text
-    context.shadowColor = "transparent";
+    const colors = COLOR_VARIATIONS[node.group] || COLOR_VARIATIONS.tool;
+    const usesDarkText = getRelativeLuminance(colors.base) > 0.28;
 
     // Calculate font size based on bubble radius (within limits)
     const fontSize = Math.min(Math.max(10, node.radius * 0.35), 18);
     context.font = `500 ${fontSize}px "Libre Franklin", sans-serif`;
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillStyle = "#1e293b"; // Dark slate color for good contrast
+    context.fillStyle = usesDarkText ? "#0f172a" : "#f8fafc";
+    context.strokeStyle = usesDarkText
+        ? "rgba(255, 255, 255, 0.28)"
+        : "rgba(15, 23, 42, 0.38)";
+    context.shadowColor = usesDarkText
+        ? "rgba(255, 255, 255, 0.24)"
+        : "rgba(15, 23, 42, 0.28)";
+    context.shadowBlur = 6;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 1;
 
     // Determine the maximum width for text based on radius
     const maxWidth = node.radius * 1.7; // Allow text slightly wider than bubble diameter
@@ -166,8 +196,11 @@ function drawNodeText(context, node) {
     lines.forEach((line, i) => {
         // Calculate vertical offset to center multi-line text
         const yOffset = (i - (lines.length - 1) / 2) * lineHeight;
+        context.strokeText(line, node.x, node.y + yOffset);
         context.fillText(line, node.x, node.y + yOffset);
     });
+
+    context.shadowColor = "transparent";
 }
 
 // Utility to wrap text if it exceeds maxWidth

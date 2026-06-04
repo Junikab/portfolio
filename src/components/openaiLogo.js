@@ -2,13 +2,13 @@ import React from "react";
 
 function OpenAILogo() {
     return (
-        <div className="flex h-full items-center justify-center">
-            <div className="animate-zoomPulse">
+        <div className="flex h-full w-full items-center justify-center">
+            <div className="h-full w-full animate-zoomPulse">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="146.694 227.042 267.198 264.812"
-                    width="100"
-                    height="100"
+                    width="100%"
+                    height="100%"
                     aria-hidden="true"
                 >
                     <path

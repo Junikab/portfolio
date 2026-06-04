@@ -14,11 +14,11 @@ function SocialLinks() {
                     LinkedIn and GitHub right below.
                 </p>
 
-                <div className="mt-6">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                <div className="mt-12">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600">
                         Currently Open To
                     </p>
-                    <ul className="mt-3 space-y-2 text-sm font-medium text-slate-700">
+                    <ul className="mt-4 space-y-3 text-sm font-medium text-slate-500">
                         <li className="flex items-start gap-2">
                             <span
                                 aria-hidden="true"
@@ -43,8 +43,10 @@ function SocialLinks() {
                     </ul>
                 </div>
 
-                <div className="mt-5 flex flex-col gap-4">
-                    <DownloadResume colorScheme="default" />
+                <div className="mt-12 flex flex-col gap-6">
+                    <div>
+                        <DownloadResume colorScheme="default" />
+                    </div>
                     <Links />
                 </div>
             </div>
