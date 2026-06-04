@@ -7,7 +7,7 @@ function About() {
         <SectionCard className="h-full">
             <div className="flex h-full flex-col overflow-hidden">
                 <div className="px-6 pt-6 sm:px-8 sm:pt-8">
-                    <h2 className="section-heading">About Me</h2>
+                    <h2 className="section-heading">About</h2>
                     <div className="section-copy mt-4 space-y-4">
                         <p>
                             I&apos;m a junior front-end developer who enjoys
