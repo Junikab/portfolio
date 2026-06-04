@@ -9,7 +9,7 @@ import jennysFlowersImage from "../assets/jennysFlowers.png";
 const projectsData = [
     {
         id: 1,
-        title: "Finally",
+        title: "FinAlly",
         description:
             "AI-assisted trading workspace demo and chat-driven actions.",
         image: finallyScreanshot,
@@ -65,7 +65,7 @@ const projectsData = [
     },
     {
         id: 6,
-        title: "Yahtzee game",
+        title: "Yahtzee Game",
         description: "A Yahtzee game built with React.",
         image: yahtzeeImage,
         link: "https://junikab.github.io/Yahtzee-game/",

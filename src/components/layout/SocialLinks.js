@@ -40,6 +40,20 @@ function SocialLinks() {
                             />
                             <span>Data visualisation and mapping projects</span>
                         </li>
+                        <li className="flex items-start gap-2">
+                            <span
+                                aria-hidden="true"
+                                className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-400"
+                            />
+                            <span>Open to remote and on-site roles</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <span
+                                aria-hidden="true"
+                                className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-400"
+                            />
+                            <span>Based in Western Sydney</span>
+                        </li>
                     </ul>
                 </div>
 
