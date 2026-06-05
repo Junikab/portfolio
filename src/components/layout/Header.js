@@ -35,7 +35,7 @@ function HeaderLogo({ Logo, className = "" }) {
 function Header() {
     return (
         <header>
-            <div className="mt-5 text-center md:text-left">
+            <div className="mt-2 text-center lg:text-left">
                 <h1 className="font-display text-[2.75rem] leading-none text-white sm:text-5xl lg:text-[3.4rem]">
                     Jenny Deygin
                 </h1>
@@ -43,14 +43,14 @@ function Header() {
                     Front-end developer
                 </p>
             </div>
-            <div className="mt-5 max-w-xl space-y-3 text-center text-[15px] leading-6 text-slate-300 md:text-left sm:text-base sm:leading-7">
+            <div className="mt-5 max-w-xl space-y-3 text-center text-[15px] leading-6 text-slate-300 lg:text-left sm:text-base sm:leading-7">
                 <p>
                     I build clean, responsive interfaces with React, Vue, and
                     JavaScript, with a QA background that keeps the experience
                     careful, reliable, and easy to use.
                 </p>
             </div>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-6 md:justify-start sm:gap-8">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:justify-start">
                 {introLogos.map(({ key, Logo, className }) => (
                     <HeaderLogo
                         key={key}
