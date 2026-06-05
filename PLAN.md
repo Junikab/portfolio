@@ -1,7 +1,7 @@
 # Portfolio Improvement Plan
 
-Last updated: 2026-06-02
-Status: First implementation pass complete
+Last updated: 2026-06-04
+Status: Layout experiment branch in progress
 
 ## Goal
 Improve the portfolio in three practical ways:
@@ -12,6 +12,11 @@ Improve the portfolio in three practical ways:
 
 ## Current Focus
 This file is a living checklist. Update it whenever scope changes or a task is completed.
+
+Current branch focus:
+- Combine the intro, contact actions, and skills visualisation into one top block.
+- Keep `Experience` as the second block.
+- Move `About` below `Experience` and switch it to a text-left, photo-right layout on large screens.
 
 ## Phase 1: Documentation And Repo Guidance
 - [x] Create `PLAN.md` as the working checklist for this repo.
@@ -110,3 +115,8 @@ Each project can now support:
 - Implemented the first cleanup and design pass.
 - Added the portfolio project to the projects data.
 - Validated with `npm test` and `npm run build`.
+
+### 2026-06-04
+- Started the `portfolio-layout-experiment` branch.
+- Reworked the page structure into a combined intro block, then `Experience`, then `About`.
+- Split the combined intro block back into separate `Header`, `SocialLinks`, `Skills`, and `IntroSection` components while keeping the same visual layout direction.

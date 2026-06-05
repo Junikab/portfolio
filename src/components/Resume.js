@@ -1,6 +1,10 @@
 import resumePDF from "../assets/JennyDeyginCV.pdf";
 
-function DownloadResume({ colorScheme = "default" }) {
+function DownloadResume({
+    colorScheme = "default",
+    className = "",
+    fullWidth = true,
+}) {
     const buttonStyles = {
         default: "bg-slate-900 text-white hover:bg-slate-800",
         alternate:
@@ -8,13 +12,14 @@ function DownloadResume({ colorScheme = "default" }) {
     };
 
     const buttonClassName = buttonStyles[colorScheme] || buttonStyles.default;
+    const widthClassName = fullWidth ? "w-full" : "w-auto max-w-full";
 
     return (
         <a
             href={resumePDF}
             download="JennyDeyginCV.pdf"
             aria-label="Download Jenny Deygin resume as PDF"
-            className={`cta-button ${buttonClassName}`}
+            className={`cta-button ${buttonClassName} ${widthClassName} ${className}`}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

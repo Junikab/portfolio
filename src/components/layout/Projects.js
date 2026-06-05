@@ -72,7 +72,7 @@ function Projects() {
             <div className="mx-auto">
                 <div className="max-w-3xl">
                     <h2 className="font-display text-4xl leading-tight text-slate-950 sm:text-5xl">
-                        My Projects
+                        Projects
                     </h2>
                     <p className="section-copy mt-4">
                         A mix of client work, front-end experiments, and small

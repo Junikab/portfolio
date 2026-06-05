@@ -2,9 +2,9 @@ import React from "react";
 
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-function Links() {
+function Links({ className = "" }) {
     return (
-        <div className="flex flex-wrap gap-3">
+        <div className={`flex flex-wrap gap-3 ${className}`}>
             <a
                 href="https://linkedin.com/in/jennydeygin"
                 target="_blank"

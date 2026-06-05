@@ -1,10 +1,8 @@
 import React from "react";
 
-import Header from "./Header";
+import IntroSection from "./IntroSection";
 import About from "./About";
 import Experience from "./Experience";
-import SocialLinks from "./SocialLinks";
-import Skills from "./Skills";
 import Projects from "./Projects";
 import Footer from "./Footer";
 import WidthContainer from "./WidthContainer";
@@ -18,17 +16,16 @@ function PortfolioPage() {
             />
             <div className="mx-auto max-w-7xl space-y-6">
                 <WidthContainer>
-                    <Header />
+                    <IntroSection />
                 </WidthContainer>
 
-                <div className="grid gap-6 lg:grid-cols-3">
+                <WidthContainer>
+                    <Experience />
+                </WidthContainer>
+
+                <WidthContainer>
                     <About />
-                    <SocialLinks />
-                    <Skills />
-                    <div className="lg:col-span-3">
-                        <Experience />
-                    </div>
-                </div>
+                </WidthContainer>
 
                 <WidthContainer className="pt-2">
                     <Projects />

@@ -66,7 +66,7 @@ code {
     }
 
     .cta-button {
-        @apply inline-flex w-full items-center justify-center gap-3 rounded-[18px] px-4 py-4 text-base font-semibold transition-colors duration-200;
+        @apply inline-flex items-center justify-center gap-3 rounded-[18px] px-4 py-3 text-sm font-semibold transition-colors duration-200 sm:py-4 sm:text-base;
     }
 
     .social-link {
