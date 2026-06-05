@@ -7,16 +7,18 @@ function SocialLinks() {
     return (
         <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:gap-4">
             <div>
-                <span className="mt-5 max-w-xl space-y-3 text-center text-[15px] leading-6 text-slate-300 lg:text-left sm:text-base sm:leading-7">You can find my contact in the resume.</span>
+                <p className="text-center text-[15px] leading-6 text-slate-300 md:text-left sm:text-base sm:leading-7">
+                    You can find my contact in the resume.
+                </p>
             </div>
-            <div className="mx-auto flex w-full max-w-[17rem] justify-center lg:mx-0 lg:w-auto lg:max-w-none lg:justify-start">
+            <div className="mx-auto flex w-full max-w-[16rem] justify-center md:mx-0 md:w-auto md:max-w-none md:justify-start">
                 <DownloadResume
-                colorScheme="alternate"
+                    colorScheme="alternate"
                     fullWidth={false}
                     className="whitespace-nowrap px-5 text-sm sm:text-base"
                 />
             </div>
-            <Links className="mx-auto w-full justify-center lg:mx-0 lg:w-auto lg:justify-start" />
+            <Links className="mx-auto w-full justify-center md:mx-0 md:w-auto md:justify-start" />
         </div>
     );
 }

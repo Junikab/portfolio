@@ -9,8 +9,8 @@ const DEFAULT_DIMENSIONS = { width: 400, height: 440 };
 // =============================================
 
 function getCanvasHeight(width) {
-    if (width < 480) return 360;
-    if (width < 1024) return 400;
+    if (width < 480) return 280;
+    if (width < 1024) return 320;
     return 440;
 }
 
@@ -476,7 +476,7 @@ function SkillsBubbles() {
     return (
         <div
             ref={containerRef}
-            className="h-full min-h-[360px] w-full overflow-hidden rounded-[24px]"
+            className="h-full min-h-[280px] w-full overflow-hidden rounded-[24px] sm:min-h-[320px] lg:min-h-[360px]"
         >
             <canvas
                 ref={canvasRef}

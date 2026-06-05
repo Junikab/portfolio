@@ -12,13 +12,15 @@ function IntroSection() {
                 aria-hidden="true"
                 className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.28),_transparent_26%),linear-gradient(135deg,_rgba(51,65,85,0.95),_rgba(15,23,42,1)_60%)]"
             />
-            <div className="relative grid gap-5 px-5 py-5 sm:gap-6 sm:px-8 sm:py-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-stretch lg:gap-7 lg:px-9 lg:py-9">
-                <div className="flex flex-col justify-between">
+            <div className="relative grid gap-5 px-5 py-5 sm:gap-6 sm:px-8 sm:py-8 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:items-stretch md:gap-6 lg:gap-7 lg:px-9 lg:py-9">
+                <div className="min-w-0 flex flex-col justify-between">
                     <Header />
                     <SocialLinks />
                 </div>
 
-                <Skills variant="hero" />
+                <div className="min-w-0">
+                    <Skills variant="hero" />
+                </div>
             </div>
         </SectionCard>
     );
