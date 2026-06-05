@@ -13,7 +13,7 @@ function Footer() {
             />
             <div className="relative grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div>
-                    <h2 className="font-display text-3xl text-white">
+                    <h2 className="text-3xl font-medium text-white">
                         Building for clarity
                     </h2>
                     <p className="mt-4 text-base leading-7 text-slate-300">
@@ -24,7 +24,7 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h2 className="font-display text-3xl text-white">
+                    <h2 className="text-3xl font-medium text-white">
                         Built with
                     </h2>
                     <ul className="mt-4 space-y-3 text-base leading-7 text-slate-300">

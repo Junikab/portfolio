@@ -54,11 +54,11 @@ code {
     }
 
     .surface-card {
-        @apply relative overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/[0.92] shadow-[0_8px_18px_rgba(15,23,42,0.05),0_24px_56px_rgba(15,23,42,0.09)] transition-shadow duration-300 hover:shadow-[0_12px_24px_rgba(15,23,42,0.07),0_30px_68px_rgba(15,23,42,0.11)] backdrop-blur;
+        @apply relative overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/[0.92] shadow-[0_8px_18px_rgba(15,23,42,0.2),0_24px_56px_rgba(15,23,42,0.09)] transition-shadow duration-300 hover:shadow-[0_12px_24px_rgba(15,23,42,0.07),0_30px_68px_rgba(15,23,42,0.11)] backdrop-blur;
     }
 
     .section-heading {
-        @apply font-display text-4xl leading-tight text-slate-950;
+        @apply text-4xl font-medium leading-tight text-slate-950;
     }
 
     .section-copy {

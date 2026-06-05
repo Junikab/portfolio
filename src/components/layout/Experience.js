@@ -26,7 +26,6 @@ function Experience() {
     return (
         <SectionCard>
             <div className="flex flex-col px-6 py-6 sm:px-8 sm:py-8">
-                {/* <h2 className="section-heading">Experience</h2> */}
                 <div className="mt-auto grid gap-4 lg:grid-cols-3">
                     {experienceHighlights.map((item) => (
                         <article
@@ -36,7 +35,7 @@ function Experience() {
                             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
                                 {item.title}
                             </p>
-                            <h3 className="mt-1.5 text-lg font-semibold text-slate-900">
+                            <h3 className="mt-1.5 text-lg font-medium text-slate-900">
                                 {item.heading}
                             </h3>
                             <p className="section-copy mt-1.5">{item.copy}</p>
