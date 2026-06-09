@@ -2,66 +2,75 @@ import React from "react";
 import DownloadResume from "../Resume";
 import Links from "../links";
 
-
 function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className="mx-auto py-10 bg-gray-50 rounded-xl shadow-md bg-gradient-to-r from-indigo-500/70 via-purple-500/70 to-pink-500/70">
-            <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
+        <footer className="surface-card overflow-hidden border-0 bg-slate-950 px-6 py-8 text-slate-100 shadow-[0_26px_70px_rgba(15,23,42,0.18)] sm:px-8 sm:py-10">
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(148,163,184,0.22),_transparent_24%),linear-gradient(180deg,_rgba(30,41,59,0.92),_rgba(15,23,42,1))]"
+            />
+            <div className="relative grid grid-cols-1 gap-8 md:grid-cols-3">
+                <div>
+                    <h2 className="text-3xl font-medium text-white">
+                        Building for clarity
+                    </h2>
+                    <p className="mt-4 text-base leading-7 text-slate-300">
+                        I like interfaces that feel calm, fast, and easy to
+                        trust. That usually means strong structure, careful
+                        spacing, and fewer distractions.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 className="text-3xl font-medium text-white">
+                        Built with
+                    </h2>
+                    <ul className="mt-4 space-y-3 text-base leading-7 text-slate-300">
+                        <li>
+                            <span className="font-semibold text-white">
+                                React
+                            </span>{" "}
+                            for component-driven UI
+                        </li>
+                        <li>
+                            <span className="font-semibold text-white">
+                                Tailwind CSS
+                            </span>{" "}
+                            for layout and visual system work
+                        </li>
+                        <li>
+                            <span className="font-semibold text-white">
+                                D3
+                            </span>{" "}
+                            for the draggable skills visualisation
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="flex h-full flex-col justify-between gap-6">
                     <div>
-                        <p className="text-white">
-                            <h2 className="text-3xl mb-4 font-medium capitalize">
-                                Inspired By
-                            </h2>{" "}
-                        </p>
-                        <div className="text-gray-50 text-lg/8">
-                            <p>
-                                Beautiful portfolio by{" "}
-                                <a
-                                    href="https://juliakuchina.github.io/portfolio/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-fuchsia-300 hover:text-gray-800 uppercase transition-colors"
-                                >
-                                    juliakuchina
-                                </a>{" "}
-                            </p>
-                            <p>Google fonts -Inter/Roboto</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h2 className="text-3xl mb-4 font-medium capitalize text-white">
-                            Built With
-                        </h2>
-                        <div className="text-gray-50 text-lg/8">
-                            <p>
-                                <span className="font-medium">React</span> -
-                                Component-based UI library
-                            </p>
-                            <p>
-                                <span className="font-medium">
-                                    Tailwind CSS
-                                </span>{" "}
-                                - Utility-first CSS framework
-                            </p>
-                            <p>
-                                <span className="font-medium">D3.js</span> -
-                                Data-driven document visualization
-                            </p>
-                        </div>
-                    </div>
-                    <div className="h-full flex flex-col justify-between px-6 pb-4">
-                        <div className="self-start">
-                            <DownloadResume colorScheme="alternate" />
-                        </div>
-                        <div className="mt-4 self-left">
+                        <DownloadResume colorScheme="alternate" />
+                        <div className="mt-4">
                             <Links />
                         </div>
-                        <div className="self-bottom">
-                            <p className="mt-auto pt-4 text-gray-50 text-sm/8">
-                                &copy; 2025 Junikab. All rights reserved.
-                            </p>
-                        </div>
+                    </div>
+
+                    <div className="space-y-2 text-sm leading-6 text-slate-400">
+                        <p>
+                            Portfolio concept originally sparked by{" "}
+                            <a
+                                href="https://juliakuchina.github.io/portfolio/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-semibold text-slate-200 transition-colors hover:text-white"
+                            >
+                                Julia Kuchina
+                            </a>
+                            .
+                        </p>
+                        <p>&copy; {currentYear} Jenny Deygin.</p>
                     </div>
                 </div>
             </div>

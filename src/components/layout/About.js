@@ -1,44 +1,52 @@
 import React from "react";
 import jennyImage from "../../assets/Jenny.jpg";
+import SectionCard from "./SectionCard";
 
 function About() {
     return (
-        <div className="relative lg:row-span-2 h-full">
-            <div className="absolute inset-px rounded-lg bg-white"></div>
-            <div className="relative flex h-full shadow-md flex-col overflow-hidden rounded-lg">
-                <div className="px-6 pt-6 pb-3 sm:px-10 sm:pt-10 sm:pb-0">
-                    <p className="mt-2 text-3xl font-medium text-gray-950 max-lg:text-center">
-                        About Me
-                    </p>
-                    <div className="my-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
+        <SectionCard>
+            <div className="grid lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)]">
+                <div className="order-2 px-6 py-6 sm:px-8 sm:py-8 lg:order-1 lg:py-10">
+                    <h2 className="section-heading">About</h2>
+                    <div className="section-copy mt-4 max-w-2xl space-y-4">
                         <p>
-                            I am a <strong>front-end developer</strong> with
-                            experience in <strong>QA automation</strong> using{" "}
-                            <strong>Express</strong>,{" "}
-                            <strong>JavaScript</strong>, and{" "}
-                            <strong>Cypress.io</strong>. Early in my career,
-                            I've embraced both traditional development practices
-                            and modern <strong>AI-assisted workflows</strong> to
-                            enhance productivity. <br />
-                            I'm passionate about creating{" "}
-                            <strong>intuitive interfaces</strong> while
-                            continuously exploring
-                            <strong> emerging technologies</strong> that reshape
-                            our development landscape.
+                            I&apos;m a junior front-end developer who enjoys
+                            building clean, responsive interfaces with React,
+                            Vue, and JavaScript. I like taking an idea from a
+                            rough concept to something clear, polished, and
+                            genuinely pleasant to use.
+                        </p>
+                        <p>
+                            My background in QA automation taught me to pay
+                            attention to the details that shape a good
+                            experience, from layout consistency and
+                            accessibility to the small interactions that make a
+                            page feel finished. I&apos;m especially interested
+                            in data visualisation and interactive mapping,
+                            where thoughtful design can make complex
+                            information easier to understand.
                         </p>
                     </div>
                 </div>
-                <div className="relative bg-gradient-to-t from-violet-950/80 to-violet-100/10 w-full h-full pt-6 flex-grow pb-6 flex justify-center items-center">
-                    <div className="h-72 w-72 border-2 border-indigo-950 rounded-full overflow-hidden">
-                        <img
-                            className="object-cover w-full h-full"
-                            src={jennyImage}
-                            alt="Jenny"
-                        />
-                    </div>
+
+                <div className="order-1 relative flex min-h-[18rem] items-center justify-center overflow-hidden bg-[linear-gradient(0deg,rgb(255,255,255),rgba(15,23,42,0.72))] px-6 py-8 sm:min-h-[20rem] sm:px-8 lg:order-2 lg:min-h-full lg:bg-[linear-gradient(90deg,rgb(255,255,255),rgba(15,23,42,0.72))] lg:px-10">
+                    <div
+                        aria-hidden="true"
+                        className="absolute inset-x-8 top-6 h-24 rounded-full bg-[radial-gradient(circle,_rgba(90,117,146,0.18),_transparent_68%)] blur-2xl"
+                    />
+                    <figure className="relative">
+                        <div className="mx-auto h-56 w-56 overflow-hidden rounded-full border-[4px] border-white/80 shadow-[0_24px_50px_rgba(15,23,42,0.16)] sm:h-64 sm:w-64 lg:h-72 lg:w-72">
+                            <img
+                                className="h-full w-full object-cover"
+                                src={jennyImage}
+                                alt="Portrait of Jenny Deygin"
+                                loading="lazy"
+                            />
+                        </div>
+                    </figure>
                 </div>
             </div>
-        </div>
+        </SectionCard>
     );
 }
 

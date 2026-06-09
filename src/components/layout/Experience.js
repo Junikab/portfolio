@@ -1,55 +1,49 @@
 import React from "react";
+import SectionCard from "./SectionCard";
+
+const experienceHighlights = [
+    {
+        title: "Current focus",
+        heading: "Independent front-end developer",
+        copy:
+            "Since 2023, I've been building responsive marketing sites and small single-page apps for SMEs and personal brands.",
+    },
+    {
+        title: "Foundation",
+        heading: "QA automation and product collaboration",
+        copy:
+            "My Cypress and JavaScript QA background still shapes how I work: I think about edge cases, testability, and stable user flows from the start.",
+    },
+    {
+        title: "Education",
+        heading: "Geography, UX, and data visualisation",
+        copy:
+            "B.A. in Geography and Human Environment, with a lasting interest in UI/UX, interactive mapping, and data-driven storytelling.",
+    },
+];
 
 function Experience() {
     return (
-        <div className="relative lg:row-start-2">
-            <div className="absolute inset-px shadow-md rounded-lg bg-white"></div>
-            <div className="relative flex h-full flex-col overflow-hidden">
-                <div className="px-6 pt-6 pb-6 sm:px-10 sm:pt-10">
-                    <h2 className="mt-2 text-3xl font-medium text-gray-950 max-lg:text-center">
-                        Experience
-                    </h2>
-                    <div className="mt-4 max-w-lg space-y-4 text-base/7 text-gray-600 max-lg:text-center">
-                        <div>
-                            <p className="mt-2">
-                                <span className="font-bold">
-                                    Web development
-                                </span>{" "}
-                                — 5 years
-                                <br className="mb-1" />
-                                <span className="font-bold">React</span> — 3
-                                years
-                                <br className="mb-1" />
-                                <span className="font-bold">
-                                    AI-assisted workflows
-                                </span>{" "}
-                                — Using <strong>Windsurf</strong>
+        <SectionCard>
+            <div className="flex flex-col px-6 py-6 sm:px-8 sm:py-8">
+                <div className="mt-auto grid gap-4 lg:grid-cols-3">
+                    {experienceHighlights.map((item) => (
+                        <article
+                            key={item.title}
+                            className="rounded-[24px] bg-slate-50 px-4 py-4 ring-1 ring-slate-200/70 sm:px-5"
+                        >
+                            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                                {item.title}
                             </p>
-                        </div>
-
-                        <div className="mt-4">
-                            <h3 className="text-lg font-bold text-gray-800">
-                                Education
+                            <h3 className="mt-1.5 text-lg font-medium text-slate-900">
+                                {item.heading}
                             </h3>
-                            <p className="mt-2">
-                                Bachelor in Geography and Human Environment
-                            </p>
-                        </div>
-
-                        <div className="mt-4">
-                            <h3 className="text-lg font-bold text-gray-800">
-                                Interests
-                            </h3>
-                            <p className="mt-2">
-                                <strong>Data viz</strong> •
-                                <strong> UI/UX</strong> •
-                                <strong> Interactive mapping</strong>
-                            </p>
-                        </div>
-                    </div>
+                            <p className="section-copy mt-1.5">{item.copy}</p>
+                        </article>
+                    ))}
                 </div>
             </div>
-        </div>
+        </SectionCard>
     );
 }
 

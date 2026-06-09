@@ -1,55 +1,66 @@
 import React from "react";
 import ReactLogo from "../reactLogo";
 import JsLogo from "../jsLogo";
+import OpenAILogo from "../openaiLogo";
 
-function Header() {
-    const Title = () => (
-        <div className="flex flex-col justify-center items-center">
-            <h2 className="text-4xl capitalize text-white sm:text-5xl text-center">
-                Jenny Deygin
-            </h2>
-            <h2 className="mt-3 text-3xl text-gray-100 text-center">
-                Front End Developer
-            </h2>
+const introLogos = [
+    {
+        key: "openai",
+        Logo: OpenAILogo,
+        className: "h-11 w-11 text-white/95 sm:h-12 sm:w-12",
+    },
+    {
+        key: "js",
+        Logo: JsLogo,
+        className: "h-11 w-11 sm:h-12 sm:w-12",
+    },
+    {
+        key: "react",
+        Logo: ReactLogo,
+        className: "h-12 w-12 sm:h-14 sm:w-14",
+    },
+];
+
+function HeaderLogo({ Logo, className = "" }) {
+    return (
+        <div
+            aria-hidden="true"
+            className={`flex items-center justify-center ${className}`}
+        >
+            <Logo />
         </div>
     );
+}
 
-
+function Header() {
     return (
-        <div className="mx-auto bg-gradient-to-r from-indigo-500/70 via-purple-500/70 to-pink-500/70 shadow-md rounded-lg py-10">
-            {/* Desktop Layout (3-column grid) - hidden on mobile */}
-            <div className="hidden md:grid md:grid-cols-3">
-                <div className="flex justify-center items-center">
-                    <div className="w-24 h-24">
-                        <JsLogo />
-                    </div>
-                </div>
-
-                <Title />
-
-                <div className="flex justify-center items-center">
-                    <div className="w-24 h-24">
-                        <ReactLogo />
-                    </div>
-                </div>
+        <header>
+            <div className="text-center lg:text-left">
+                <h1 className="text-[2.75rem] font-medium leading-none text-white sm:text-5xl lg:text-[3.4rem]">
+                    Jenny Deygin
+                </h1>
+                <p className="mt-2 text-base font-medium text-slate-200 sm:text-xl">
+                    Front-end developer
+                </p>
             </div>
-
-            {/* Mobile Layout (stacked) - hidden on desktop */}
-            <div className="flex flex-col md:hidden">
-                <div className="mb-6">
-                    <Title />
-                </div>
-
-                <div className="flex justify-center items-center space-x-8">
-                    <div className="w-20 h-20">
-                        <JsLogo />
-                    </div>
-                    <div className="w-20 h-20">
-                        <ReactLogo />
-                    </div>
-                </div>
+            <div className="mt-5 max-w-xl space-y-3 text-center text-[15px] leading-6 text-slate-300 lg:text-left sm:text-base sm:leading-7">
+                <p>
+                    I build clean, responsive interfaces with React, Vue, and
+                    JavaScript, with a QA background that keeps the experience
+                    careful, reliable, and easy to use.
+                </p>
             </div>
-        </div>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:justify-start">
+                {introLogos.map(({ key, Logo, className }) => (
+                    <HeaderLogo
+                        key={key}
+                        Logo={Logo}
+                        className={className}
+                    />
+                ))}
+            </div>
+ 
+        </header>
     );
 }
 

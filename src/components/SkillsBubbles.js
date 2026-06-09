@@ -2,9 +2,17 @@ import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 import { SKILLS, COLOR_VARIATIONS } from "../data/skillData";
 
+const DEFAULT_DIMENSIONS = { width: 400, height: 440 };
+
 // =============================================
 // UTILITY FUNCTIONS
 // =============================================
+
+function getCanvasHeight(width) {
+    if (width < 480) return 280;
+    if (width < 1024) return 320;
+    return 440;
+}
 
 // Get pointer position (works for both mouse and touch)
 function getEventPosition(e, canvas) {
@@ -38,16 +46,17 @@ function findNodeUnderPointer(x, y, nodes) {
 
 // Create nodes from skill data
 function createNodesFromSkills(skills, width, height, sizeFactor) {
-    const centerX = width / 2;
-    const centerY = height / 2;
+    const horizontalPadding = width * 0.08;
+    const verticalPadding = height * 0.08;
 
     return skills.map((skill) => ({
         id: skill.id,
         group: skill.group,
         value: skill.value,
         radius: Math.sqrt(skill.value) * sizeFactor,
-        x: centerX + (Math.random() - 0.5) * width * 0.6, // Random initial positions
-        y: centerY + (Math.random() - 0.5) * height * 0.6,
+        // Seed nodes across most of the canvas so the layout uses the full area.
+        x: horizontalPadding + Math.random() * (width - horizontalPadding * 2),
+        y: verticalPadding + Math.random() * (height - verticalPadding * 2),
         vx: 0, // Initial velocity
         vy: 0,
     }));
@@ -55,7 +64,7 @@ function createNodesFromSkills(skills, width, height, sizeFactor) {
 
 // Calculate the boundary for nodes
 function calculateBoundary(centerX, centerY, dimensions) {
-    const margin = 0.15; // 15% margin from edges
+    const margin = 0.08;
     const effectiveWidth = dimensions.width * (1 - margin);
     const effectiveHeight = dimensions.height * (1 - margin);
     return {
@@ -72,7 +81,29 @@ function setupCanvas(canvas, context, dimensions, pixelRatio) {
     canvas.height = dimensions.height * pixelRatio;
     canvas.style.width = `${dimensions.width}px`;
     canvas.style.height = `${dimensions.height}px`;
-    context.scale(pixelRatio, pixelRatio);
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+}
+
+function parseRgbColor(color) {
+    const values = color.match(/\d+/g);
+    if (!values) return [100, 116, 139];
+    return values.map(Number);
+}
+
+function withAlpha(color, alpha) {
+    const [r, g, b] = parseRgbColor(color);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function getRelativeLuminance(color) {
+    const [r, g, b] = parseRgbColor(color).map((value) => {
+        const channel = value / 255;
+        return channel <= 0.03928
+            ? channel / 12.92
+            : ((channel + 0.055) / 1.055) ** 2.4;
+    });
+
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
 // =============================================
@@ -108,7 +139,7 @@ function constrainNodeToBoundary(node, boundary) {
 function drawBubble(context, node) {
     const colors = COLOR_VARIATIONS[node.group] || COLOR_VARIATIONS.tool; // Fallback color
 
-    // Create a radial gradient for a 3D effect
+    // Create a richer radial gradient so the bubbles feel less washed out.
     const gradient = context.createRadialGradient(
         node.x - node.radius * 0.3, // Inner circle offset slightly
         node.y - node.radius * 0.3,
@@ -119,7 +150,7 @@ function drawBubble(context, node) {
     );
 
     gradient.addColorStop(0, colors.lighter);
-    gradient.addColorStop(0.7, colors.base);
+    gradient.addColorStop(0.55, colors.base);
     gradient.addColorStop(1, colors.darker);
 
     // Draw the bubble shape
@@ -127,26 +158,34 @@ function drawBubble(context, node) {
     context.arc(node.x, node.y, node.radius, 0, 2 * Math.PI);
     context.fillStyle = gradient;
 
-    // Add a subtle shadow
-    context.shadowColor = "rgba(0, 0, 0, 0.2)";
-    context.shadowBlur = 5;
-    context.shadowOffsetX = 2;
-    context.shadowOffsetY = 2;
+    context.shadowColor = withAlpha(colors.darker, 0.24);
+    context.shadowBlur = 10;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 4;
 
     context.fill();
 }
 
 // Draw text centered within a node, handling wrapping
 function drawNodeText(context, node) {
-    // Reset shadow before drawing text
-    context.shadowColor = "transparent";
+    const colors = COLOR_VARIATIONS[node.group] || COLOR_VARIATIONS.tool;
+    const usesDarkText = getRelativeLuminance(colors.base) > 0.28;
 
     // Calculate font size based on bubble radius (within limits)
-    const fontSize = Math.min(Math.max(10, node.radius * 0.45), 14);
-    context.font = `${fontSize}px bold sans-serif`;
+    const fontSize = Math.min(Math.max(10, node.radius * 0.35), 18);
+    context.font = `500 ${fontSize}px "Libre Franklin", sans-serif`;
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillStyle = "#1e293b"; // Dark slate color for good contrast
+    context.fillStyle = usesDarkText ? "#0f172a" : "#f8fafc";
+    context.strokeStyle = usesDarkText
+        ? "rgba(255, 255, 255, 0.28)"
+        : "rgba(15, 23, 42, 0.38)";
+    context.shadowColor = usesDarkText
+        ? "rgba(255, 255, 255, 0.24)"
+        : "rgba(15, 23, 42, 0.28)";
+    context.shadowBlur = 6;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 1;
 
     // Determine the maximum width for text based on radius
     const maxWidth = node.radius * 1.7; // Allow text slightly wider than bubble diameter
@@ -157,8 +196,11 @@ function drawNodeText(context, node) {
     lines.forEach((line, i) => {
         // Calculate vertical offset to center multi-line text
         const yOffset = (i - (lines.length - 1) / 2) * lineHeight;
+        context.strokeText(line, node.x, node.y + yOffset);
         context.fillText(line, node.x, node.y + yOffset);
     });
+
+    context.shadowColor = "transparent";
 }
 
 // Utility to wrap text if it exceeds maxWidth
@@ -202,8 +244,8 @@ function wrapText(context, text, maxWidth) {
 function setupSimulation(nodes, centerX, centerY, tickHandler) {
     return d3
         .forceSimulation(nodes)
-        .force("center", d3.forceCenter(centerX, centerY).strength(0.1)) // Pull towards center
-        .force("charge", d3.forceManyBody().strength(-40)) // Repel nodes from each other
+        .force("center", d3.forceCenter(centerX, centerY).strength(0.04))
+        .force("charge", d3.forceManyBody().strength(-55))
         .force(
             "collide", // Prevent nodes from overlapping
             d3
@@ -212,8 +254,8 @@ function setupSimulation(nodes, centerX, centerY, tickHandler) {
                 .strength(0.9) // Strong collision force
                 .iterations(3) // More iterations for better collision resolution
         )
-        .force("x", d3.forceX(centerX).strength(0.05)) // Gentle pull towards center X
-        .force("y", d3.forceY(centerY).strength(0.05)) // Gentle pull towards center Y
+        .force("x", d3.forceX(centerX).strength(0.02))
+        .force("y", d3.forceY(centerY).strength(0.02))
         .velocityDecay(0.4) // How quickly nodes slow down
         .alphaDecay(0.01) // How quickly simulation cools down
         .on("tick", tickHandler); // Function to call on each simulation step
@@ -320,115 +362,102 @@ function setupInteractionHandlers(canvas, simulation, nodes, draggedNodeRef) {
 // =============================================
 
 function SkillsBubbles() {
-    // Refs for DOM elements and simulation state
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
-    const simulationRef = useRef(null); // Stores the D3 simulation instance
-    const draggedNodeRef = useRef(null); // Stores the node currently being dragged
-    const nodesRef = useRef([]); // Stores the node data array
+    const simulationRef = useRef(null);
+    const draggedNodeRef = useRef(null);
+    const nodesRef = useRef([]);
 
-    // State for component dimensions, responsive to container size
-    const [dimensions, setDimensions] = useState({ width: 400, height: 600 });
+    const [dimensions, setDimensions] = useState(DEFAULT_DIMENSIONS);
+    const { width, height } = dimensions;
 
-    // Effect for handling container resize
     useEffect(() => {
         const container = containerRef.current;
         if (!container) return;
 
         const updateSize = () => {
+            const width = container.offsetWidth || DEFAULT_DIMENSIONS.width;
+            const parentHeight = container.parentElement?.offsetHeight || 0;
+            const responsiveHeight = getCanvasHeight(width);
             setDimensions({
-                width: container.offsetWidth,
-                height: 600, // Keep height fixed or make responsive too
+                width,
+                height: Math.max(parentHeight, responsiveHeight),
             });
         };
 
-        updateSize(); // Initial size check
+        updateSize();
 
-        // Debounced resize handler for performance
-        let timeoutId;
-        const handleResize = () => {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(updateSize, 150); // Adjust debounce delay as needed
-        };
+        if (typeof ResizeObserver !== "undefined") {
+            const observer = new ResizeObserver(updateSize);
+            observer.observe(container);
+            return () => observer.disconnect();
+        }
 
-        window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-            clearTimeout(timeoutId);
-        };
+        window.addEventListener("resize", updateSize);
+        return () => window.removeEventListener("resize", updateSize);
     }, []);
 
-    // Effect for creating/updating nodes when dimensions change
     useEffect(() => {
-        if (!dimensions.width) return;
+        if (!width) return;
 
-        const sizeFactor = 7.0; // Adjust to scale bubble sizes
+        const sizeFactor = 7.0;
         nodesRef.current = createNodesFromSkills(
             SKILLS,
-            dimensions.width,
-            dimensions.height,
+            width,
+            height,
             sizeFactor
         );
 
-        // If simulation exists, update nodes and restart
         if (simulationRef.current) {
             simulationRef.current.nodes(nodesRef.current);
-            simulationRef.current.alpha(0.3).restart(); // Reheat simulation
+            simulationRef.current.alpha(0.3).restart();
         }
-    }, [dimensions.width, dimensions.height]);
+    }, [height, width]);
 
-    // Effect for setting up canvas, simulation, and interactions
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas?.getContext("2d");
+        const currentDimensions = { width, height };
         if (
             !canvas ||
             !context ||
-            !dimensions.width ||
+            !width ||
             nodesRef.current.length === 0
         )
             return;
 
         const pixelRatio = window.devicePixelRatio || 1;
-        const centerX = dimensions.width / 2;
-        const centerY = dimensions.height / 2;
+        const centerX = width / 2;
+        const centerY = height / 2;
 
-        // Setup canvas resolution
-        setupCanvas(canvas, context, dimensions, pixelRatio);
-
-        // Calculate drawing boundaries
-        const boundary = calculateBoundary(centerX, centerY, dimensions);
-
-        // Define the rendering loop function
+        setupCanvas(canvas, context, currentDimensions, pixelRatio);
+        const boundary = calculateBoundary(centerX, centerY, currentDimensions);
         const renderBubbles = createRenderFunction(
             context,
             nodesRef.current,
-            dimensions,
+            currentDimensions,
             boundary
         );
 
-        // Setup or update the D3 simulation
         if (!simulationRef.current) {
-            // Only create simulation once
             simulationRef.current = setupSimulation(
                 nodesRef.current,
                 centerX,
                 centerY,
                 renderBubbles
             );
-            initializeSimulation(simulationRef.current); // Settle initial layout
+            initializeSimulation(simulationRef.current);
         } else {
-            // Update existing simulation parameters
             simulationRef.current
-                .force("center", d3.forceCenter(centerX, centerY).strength(0.1))
-                .force("x", d3.forceX(centerX).strength(0.05))
-                .force("y", d3.forceY(centerY).strength(0.05))
-                .on("tick", renderBubbles); // Ensure tick handler is up-to-date
+                .force("center", d3.forceCenter(centerX, centerY).strength(0.04))
+                .force("x", d3.forceX(centerX).strength(0.02))
+                .force("y", d3.forceY(centerY).strength(0.02))
+                .on("tick", renderBubbles)
+                .alpha(0.25)
+                .restart();
         }
 
-        renderBubbles(); // Initial render
-
-        // Setup interaction handlers and get cleanup function
+        renderBubbles();
         const cleanupInteractions = setupInteractionHandlers(
             canvas,
             simulationRef.current,
@@ -436,24 +465,25 @@ function SkillsBubbles() {
             draggedNodeRef
         );
 
-        // Return cleanup function for this effect
         return () => {
             cleanupInteractions();
-            // Stop simulation directly here
             if (simulationRef.current) {
                 simulationRef.current.stop();
             }
         };
-
-        // Rerun this effect if dimensions change (width/height) to reconfigure canvas/simulation
-    }, [dimensions.width, dimensions.height]);
+    }, [height, width]);
 
     return (
         <div
             ref={containerRef}
-            className="w-full h-full overflow-hidden"
+            className="h-full min-h-[280px] w-full overflow-hidden rounded-[24px] sm:min-h-[320px] lg:min-h-[360px]"
         >
-            <canvas ref={canvasRef} className="w-full h-full block" />
+            <canvas
+                ref={canvasRef}
+                className="block h-full w-full"
+                role="img"
+                aria-label="Interactive skills bubble chart"
+            />
         </div>
     );
 }

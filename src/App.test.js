@@ -1,8 +1,27 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock("./components/SkillsBubbles", () => function SkillsBubblesMock() {
+    return <div data-testid="skills-bubbles" />;
+});
+
+import App from "./App";
+
+test("renders the current portfolio layout", () => {
+    render(<App />);
+
+    expect(
+        screen.getByRole("heading", { name: /Jenny Deygin/i })
+    ).toBeInTheDocument();
+    expect(
+        screen.getByRole("heading", { name: /^Projects$/i })
+    ).toBeInTheDocument();
+    expect(
+        screen.getByRole("heading", { name: /^About$/i })
+    ).toBeInTheDocument();
+    expect(
+        screen.getByRole("heading", {
+            name: /Independent front-end developer/i,
+        })
+    ).toBeInTheDocument();
+    expect(screen.getByTestId("skills-bubbles")).toBeInTheDocument();
 });

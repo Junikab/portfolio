@@ -1,56 +1,93 @@
 import React from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 import projectsData from "../../data/projectData";
+import fallbackProjectImage from "../../assets/logo.webp";
 
-const ProjectCard = ({ project }) => (
-    <div
-        key={project.id}
-        className="flex flex-col overflow-hidden rounded-xl shadow-md bg-white transition-transform hover:scale-[1.02] hover:shadow-lg"
-    >
-        <div className="relative h-[280px]">
+function getProjectLinkLabel(project) {
+    if (project.linkLabel) return project.linkLabel;
+    return project.link.includes("github.com") ? "View source" : "Open site";
+}
+
+function ProjectCard({ project }) {
+    const projectImage = project.image || fallbackProjectImage;
+
+    return (
+        <article className="project-card group">
+            <div className="project-frame">
+                <span className="project-meta">
+                    {project.category || "Project"}
+                </span>
+                {project.year ? (
+                    <span className="project-meta">{project.year}</span>
+                ) : null}
+            </div>
             <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 self-center text-blue-600"
+                className="group relative block overflow-hidden rounded-[26px] bg-slate-100"
             >
                 <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-full w-full object-cover"
+                    src={projectImage}
+                    alt={project.alt || `${project.title} project preview`}
+                    className="h-[260px] w-full object-cover transition duration-500 group-hover:scale-[1.02] sm:h-[280px]"
+                    loading="lazy"
                 />
             </a>
-        </div>
-        <div className="flex flex-1 flex-col p-4">
-            <div className="flex flex-1 flex-col p-4">
-                <h3 className="text-xl font-semibold text-gray-900 text-center">
+            <div className="flex flex-1 flex-col px-1 pb-1 pt-6">
+                <h3 className="text-2xl font-medium leading-tight text-slate-950">
                     {project.title}
                 </h3>
-                <p className="mt-2 text-lg text-gray-800 text-left">
+                <p className="section-copy mt-3">
                     {project.description}
                 </p>
 
-                <div className="mt-3 text-lg text-gray-500 mt-4">
-                    {project.tech.join(", ")}
+                <ul className="mt-4 flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                        <li key={tech} className="tech-pill">
+                            {tech}
+                        </li>
+                    ))}
+                </ul>
+
+                <div className="mt-4 border-t border-slate-200 pt-4">
+                    <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-sky-700"
+                    >
+                        {getProjectLinkLabel(project)}
+                        <FiArrowUpRight className="h-4 w-4" />
+                    </a>
                 </div>
             </div>
-        </div>
-    </div>
-);
+        </article>
+    );
+}
 
 function Projects() {
     return (
-        <div className="mx-auto py-10">
-            <div className="mx-auto max-w-2xl px-0 lg:max-w-7xl lg:px-0">
-                <h2 className="mb-10 text-center text-4xl font-bold text-gray-800 capitalize tracking-wider">
-                    My Projects
-                </h2>
-                <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="surface-card px-6 py-8 sm:px-8 sm:py-10">
+            <div className="mx-auto">
+                <div className="max-w-3xl">
+                    <h2 className="text-4xl font-medium leading-tight text-slate-950">
+                        Projects
+                    </h2>
+                    <p className="section-copy mt-4">
+                        A mix of client work, front-end experiments, and small
+                        apps that helped me practice responsive UI, interaction
+                        design, and shipping to real users.
+                    </p>
+                </div>
+
+                <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                     {projectsData.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -1,25 +1,45 @@
 import React from "react";
 import SkillsBubbles from "../SkillsBubbles";
+import SectionCard from "./SectionCard";
 
-function Skills() {
-    return (
-        <div className="relative lg:row-span-2 h-full">
-            <div className="absolute inset-px shadow-md rounded-lg bg-white"></div>
-            <div className="relative flex h-full flex-col overflow-hidden">
-                <div className="px-6 pt-6 pb-4 sm:px-10 sm:pt-10">
-                    <p className="mt-2 text-3xl font-medium text-gray-950 max-lg:text-center">
-                        Technical Skills
-                    </p>
-                    <p className="mt-2 max-w-lg text-base/7 text-gray-600 max-lg:text-center">
-                        Feel free to drag and move the bubbles around :)
-                    </p>
-                </div>
-                <div>
+function Skills({ variant = "card" }) {
+    const isHero = variant === "hero";
+    const wrapperClassName = "h-full";
+    const containerClassName = isHero
+        ? "flex h-full flex-col"
+        : "flex h-full flex-col overflow-hidden";
+    const headerClassName = isHero
+        ? "px-0 pt-2"
+        : "px-6 pt-6 sm:px-8 sm:pt-8";
+    const chartPaddingClassName = isHero
+        ? "flex-1 pt-3"
+        : "flex-1 px-2 pb-2 pt-3 sm:px-4 sm:pb-4";
+    const chartFrameClassName = isHero
+        ? "h-full"
+        : "h-full rounded-[24px] bg-slate-50/90 ring-1 ring-white";
+    const copyClassName = isHero
+        ? "mt-2 text-center text-sm leading-6 text-slate-300 lg:text-left"
+        : "section-copy mt-3";
+
+    const content = (
+        <div className={containerClassName}>
+            <div className={headerClassName}>
+                <p className={copyClassName}>Drag the bubbles and play around.</p>
+            </div>
+
+            <div className={chartPaddingClassName}>
+                <div className={chartFrameClassName}>
                     <SkillsBubbles />
                 </div>
             </div>
         </div>
     );
+
+    if (isHero) {
+        return <div className={wrapperClassName}>{content}</div>;
+    }
+
+    return <SectionCard className={wrapperClassName}>{content}</SectionCard>;
 }
 
 export default Skills;
