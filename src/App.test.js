@@ -6,20 +6,22 @@ jest.mock("./components/SkillsBubbles", () => function SkillsBubblesMock() {
 
 import App from "./App";
 
-test("renders the portfolio hero and project section", () => {
+test("renders the current portfolio layout", () => {
     render(<App />);
 
     expect(
         screen.getByRole("heading", { name: /Jenny Deygin/i })
     ).toBeInTheDocument();
     expect(
-        screen.getByRole("heading", { name: /My Projects/i })
+        screen.getByRole("heading", { name: /^Projects$/i })
     ).toBeInTheDocument();
     expect(
-        screen.getByRole("heading", { name: /About Me/i })
+        screen.getByRole("heading", { name: /^About$/i })
     ).toBeInTheDocument();
     expect(
-        screen.getByRole("heading", { name: /Experience/i })
+        screen.getByRole("heading", {
+            name: /Independent front-end developer/i,
+        })
     ).toBeInTheDocument();
     expect(screen.getByTestId("skills-bubbles")).toBeInTheDocument();
 });

@@ -1,7 +1,7 @@
 # Portfolio Improvement Plan
 
-Last updated: 2026-06-04
-Status: Layout experiment branch in progress
+Last updated: 2026-06-09
+Status: Layout update documented, validated, and ready for deployment
 
 ## Goal
 Improve the portfolio in three practical ways:
@@ -13,10 +13,11 @@ Improve the portfolio in three practical ways:
 ## Current Focus
 This file is a living checklist. Update it whenever scope changes or a task is completed.
 
-Current branch focus:
-- Combine the intro, contact actions, and skills visualisation into one top block.
+Current release layout:
+- Keep the hero as one top card that combines the intro content, social links, and skills visualisation.
 - Keep `Experience` as the second block.
-- Move `About` below `Experience` and switch it to a text-left, photo-right layout on large screens.
+- Keep `About` below `Experience` in a text-left, photo-right layout on large screens.
+- Keep `Projects` and `Footer` in the existing closing positions.
 
 ## Phase 1: Documentation And Repo Guidance
 - [x] Create `PLAN.md` as the working checklist for this repo.
@@ -50,6 +51,8 @@ Keep the current section structure, but improve the site's hierarchy, rhythm, an
 - [x] Refresh the page background, spacing, and section surfaces.
 - [x] Improve typography hierarchy for headings, copy, and project metadata.
 - [x] Refine the hero section while keeping the current portfolio identity.
+- [x] Finalise the top-of-page layout as a shared hero card with intro content and skills bubbles.
+- [x] Lock in the section order as `IntroSection`, `Experience`, `About`, `Projects`, then `Footer`.
 - [x] Improve the projects grid and project card design.
 - [x] Improve the footer layout and CTA area.
 - [x] Make light copy edits for clarity and professionalism.
@@ -96,12 +99,13 @@ Each project can now support:
 - [x] Install dependencies locally in this environment.
 - [x] Run `npm test`.
 - [x] Run `npm run build`.
+- [x] Re-run validation after the final layout documentation update.
 
 ### Validation Notes
-- The smoke test passes.
+- The smoke test passes after updating `src/App.test.js` to match the current section labels.
 - The production build passes.
 - `react-force-graph-2d` was removed after confirming it was unused.
-- The remaining command-line warning is a stale `browserslist` data notice from the CRA toolchain, not an app code failure.
+- Remaining command-line warnings come from the Create React App toolchain: a stale `browserslist` data notice, a `babel-preset-react-app` dependency warning, and a Jest open-handle notice after the test run. None blocked the build or the smoke test.
 
 ## Follow-Up Ideas
 - Replace placeholder-like project artwork with cleaner screenshots for any older projects that need it.
@@ -120,3 +124,8 @@ Each project can now support:
 - Started the `portfolio-layout-experiment` branch.
 - Reworked the page structure into a combined intro block, then `Experience`, then `About`.
 - Split the combined intro block back into separate `Header`, `SocialLinks`, `Skills`, and `IntroSection` components while keeping the same visual layout direction.
+
+### 2026-06-09
+- Updated `README.md` to describe the current shipped layout and deployment flow.
+- Updated this plan to reflect the final section order and deployment-readiness check.
+- Updated the smoke test to assert the current layout headings and re-ran validation successfully.

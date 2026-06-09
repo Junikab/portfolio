@@ -1,6 +1,6 @@
 # Jenny Deygin Portfolio
 
-Personal portfolio site built with React, Tailwind CSS, and a custom D3 skills visualization.
+Single-page portfolio site built with React, Tailwind CSS, and a custom D3 skills visualization.
 
 ## Stack
 - React 18
@@ -25,6 +25,8 @@ npm run deploy
 
 ## Project Structure
 - `src/components/layout/`: page sections
+- `src/components/layout/PortfolioPage.js`: top-level section order and page shell
+- `src/components/layout/IntroSection.js`: hero card with intro content, links, and skills canvas
 - `src/components/SkillsBubbles.js`: draggable skills canvas
 - `src/data/projectData.js`: projects content
 - `src/data/skillData.js`: skills data and bubble colors
@@ -34,3 +36,5 @@ npm run deploy
 
 ## Deployment
 The site is configured for GitHub Pages using the `homepage`, `predeploy`, and `deploy` settings in `package.json`.
+
+Run `npm run deploy` to publish the current build to GitHub Pages. The `predeploy` script automatically runs `npm run build` first, so a successful local build is the main deployment check.
