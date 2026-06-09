@@ -1,4 +1,4 @@
-# Jenny Deygin Portfolio
+# Jenny Portfolio
 
 Single-page portfolio site built with React, Tailwind CSS, and a custom D3 skills visualization.
 
