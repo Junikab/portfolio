@@ -30,9 +30,9 @@ function Experience() {
                     {experienceHighlights.map((item) => (
                         <article
                             key={item.title}
-                            className="rounded-[24px] bg-slate-50 px-4 py-4 ring-1 ring-slate-200/70 sm:px-5"
+                            className="rounded-[6px] border border-slate-200 border-t-2 border-t-slate-800 bg-slate-50/70 px-4 py-5 sm:px-5"
                         >
-                            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
+                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                                 {item.title}
                             </p>
                             <h3 className="mt-1.5 text-lg font-medium text-slate-900">

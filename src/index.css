@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-    background-color: #eff4f8;
+    background-color: #f1f3f5;
 }
 
 :root {
@@ -12,18 +12,7 @@ html {
 
 body {
     min-height: 100vh;
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(83, 114, 146, 0.18),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at top right,
-            rgba(214, 153, 92, 0.16),
-            transparent 24%
-        ),
-        linear-gradient(180deg, #eef4f8 0%, #f8fafc 42%, #eef2f7 100%);
+    background: linear-gradient(180deg, #f7f8f9 0%, #eef1f4 100%);
     color: #0f172a;
     font-family: "Libre Franklin", system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
@@ -54,11 +43,11 @@ code {
     }
 
     .surface-card {
-        @apply relative overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/[0.92] shadow-[0_8px_18px_rgba(15,23,42,0.2),0_24px_56px_rgba(15,23,42,0.09)] transition-shadow duration-300 hover:shadow-[0_12px_24px_rgba(15,23,42,0.07),0_30px_68px_rgba(15,23,42,0.11)] backdrop-blur;
+        @apply relative overflow-hidden rounded-[12px] border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.06)];
     }
 
     .section-heading {
-        @apply text-4xl font-medium leading-tight text-slate-950;
+        @apply font-display text-[2.75rem] font-medium leading-[0.95] text-slate-950 sm:text-5xl;
     }
 
     .section-copy {
@@ -66,26 +55,26 @@ code {
     }
 
     .cta-button {
-        @apply inline-flex items-center justify-center gap-3 rounded-[18px] px-4 py-3 text-sm font-semibold transition-colors duration-200 sm:py-4 sm:text-base;
+        @apply inline-flex items-center justify-center gap-3 rounded-[6px] px-4 py-3 text-sm font-semibold tracking-[0.01em] transition-colors duration-200 sm:py-4 sm:text-base;
     }
 
     .social-link {
-        @apply inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-950;
+        @apply inline-flex items-center gap-2 rounded-[6px] border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-400 hover:bg-slate-50 hover:text-slate-950;
     }
 
     .project-card {
-        @apply flex h-full flex-col rounded-[30px] border border-slate-200 bg-white p-5 shadow-[0_10px_22px_rgba(15,23,42,0.05),0_22px_48px_rgba(15,23,42,0.08)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(15,23,42,0.07),0_30px_60px_rgba(15,23,42,0.12)];
+        @apply flex h-full flex-col rounded-[8px] border border-slate-200 bg-white p-4 shadow-[0_4px_14px_rgba(15,23,42,0.04)] transition-[border-color,box-shadow] duration-300 hover:border-slate-300 hover:shadow-[0_10px_26px_rgba(15,23,42,0.08)];
     }
 
     .project-frame {
-        @apply mb-4 flex items-center justify-between gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500;
+        @apply mb-3 flex items-center justify-between gap-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500;
     }
 
     .project-meta {
-        @apply rounded-full bg-slate-100 px-3 py-1;
+        @apply border-l-2 border-slate-300 pl-2;
     }
 
     .tech-pill {
-        @apply rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600;
+        @apply rounded-[4px] border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600;
     }
 }

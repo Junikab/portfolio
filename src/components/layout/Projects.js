@@ -25,7 +25,7 @@ function ProjectCard({ project }) {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative block overflow-hidden rounded-[26px] bg-slate-100"
+                className="group relative block overflow-hidden rounded-[5px] border border-slate-200 bg-slate-100"
             >
                 <img
                     src={projectImage}
@@ -35,7 +35,7 @@ function ProjectCard({ project }) {
                 />
             </a>
             <div className="flex flex-1 flex-col px-1 pb-1 pt-6">
-                <h3 className="text-2xl font-medium leading-tight text-slate-950">
+                <h3 className="font-display text-[1.75rem] font-medium leading-none text-slate-950">
                     {project.title}
                 </h3>
                 <p className="section-copy mt-3">
@@ -71,9 +71,7 @@ function Projects() {
         <section className="surface-card px-6 py-8 sm:px-8 sm:py-10">
             <div className="mx-auto">
                 <div className="max-w-3xl">
-                    <h2 className="text-4xl font-medium leading-tight text-slate-950">
-                        Projects
-                    </h2>
+                    <h2 className="section-heading">Projects</h2>
                     <p className="section-copy mt-4">
                         A mix of client work, front-end experiments, and small
                         apps that helped me practice responsive UI, interaction
@@ -81,7 +79,7 @@ function Projects() {
                     </p>
                 </div>
 
-                <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
                     {projectsData.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}

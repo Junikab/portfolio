@@ -36,10 +36,10 @@ function Header() {
     return (
         <header>
             <div className="text-center lg:text-left">
-                <h1 className="text-[2.75rem] font-medium leading-none text-white sm:text-5xl lg:text-[3.4rem]">
+                <h1 className="font-display text-[3.25rem] font-medium leading-[0.9] text-white sm:text-6xl lg:text-[4.25rem]">
                     Jenny Deygin
                 </h1>
-                <p className="mt-2 text-base font-medium text-slate-200 sm:text-xl">
+                <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300 sm:text-base">
                     Front-end developer
                 </p>
             </div>

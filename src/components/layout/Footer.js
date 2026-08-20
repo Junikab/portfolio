@@ -6,14 +6,14 @@ function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="surface-card overflow-hidden border-0 bg-slate-950 px-6 py-8 text-slate-100 shadow-[0_26px_70px_rgba(15,23,42,0.18)] sm:px-8 sm:py-10">
+        <footer className="surface-card overflow-hidden border-slate-800 bg-slate-950 px-6 py-8 text-slate-100 shadow-[0_12px_30px_rgba(15,23,42,0.12)] sm:px-8 sm:py-10">
             <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(148,163,184,0.22),_transparent_24%),linear-gradient(180deg,_rgba(30,41,59,0.92),_rgba(15,23,42,1))]"
+                className="absolute inset-0 bg-[linear-gradient(135deg,_rgba(30,41,59,0.76),_rgba(15,23,42,1)_68%)]"
             />
             <div className="relative grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div>
-                    <h2 className="text-3xl font-medium text-white">
+                    <h2 className="font-display text-3xl font-medium text-white">
                         Building for clarity
                     </h2>
                     <p className="mt-4 text-base leading-7 text-slate-300">
@@ -24,7 +24,7 @@ function Footer() {
                 </div>
 
                 <div>
-                    <h2 className="text-3xl font-medium text-white">
+                    <h2 className="font-display text-3xl font-medium text-white">
                         Built with
                     </h2>
                     <ul className="mt-4 space-y-3 text-base leading-7 text-slate-300">

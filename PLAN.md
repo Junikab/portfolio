@@ -1,7 +1,7 @@
 # Portfolio Improvement Plan
 
 Last updated: 2026-08-20
-Status: Layout update documented, validated, and ready for deployment
+Status: Professional design refinement completed and validated on `professional-design-refresh`
 
 ## Goal
 Improve the portfolio in three practical ways:
@@ -133,3 +133,6 @@ Each project can now support:
 
 ### 2026-08-20
 - Added DJ Nikki OG to the project data with its live-site link, screenshot, and technology metadata.
+- Started a separate `professional-design-refresh` branch for a safer visual experiment.
+- Reduced decorative rounding, shadows, pill treatments, and background glows across the page while preserving the skills bubbles.
+- Confirmed the production build succeeds after the design changes.
