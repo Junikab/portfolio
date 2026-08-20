@@ -8,7 +8,7 @@ function DownloadResume({
     const buttonStyles = {
         default: "bg-slate-900 text-white hover:bg-slate-800",
         alternate:
-            "bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/20",
+            "bg-sky-400 text-slate-950 shadow-[0_6px_18px_rgba(56,189,248,0.24)] ring-1 ring-sky-300 hover:bg-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300",
     };
 
     const buttonClassName = buttonStyles[colorScheme] || buttonStyles.default;

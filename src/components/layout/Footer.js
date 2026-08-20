@@ -14,12 +14,12 @@ function Footer() {
             <div className="relative grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div>
                     <h2 className="font-display text-3xl font-medium text-white">
-                        Building for clarity
+                        Selected front-end work
                     </h2>
                     <p className="mt-4 text-base leading-7 text-slate-300">
-                        I like interfaces that feel calm, fast, and easy to
-                        trust. That usually means strong structure, careful
-                        spacing, and fewer distractions.
+                        A collection of client websites, interactive apps, and
+                        experiments spanning responsive UI, browser tools, data
+                        visualisation, and practical uses of AI.
                     </p>
                 </div>
 
@@ -27,7 +27,7 @@ function Footer() {
                     <h2 className="font-display text-3xl font-medium text-white">
                         Built with
                     </h2>
-                    <ul className="mt-4 space-y-3 text-base leading-7 text-slate-300">
+                    <ul className="mt-4 space-y-1 text-base leading-7 text-slate-300">
                         <li>
                             <span className="font-semibold text-white">
                                 React
@@ -50,11 +50,9 @@ function Footer() {
                 </div>
 
                 <div className="flex h-full flex-col justify-between gap-6">
-                    <div>
+                    <div className="w-full max-w-[20rem]">
                         <DownloadResume colorScheme="alternate" />
-                        <div className="mt-4">
-                            <Links />
-                        </div>
+                        <Links className="mt-4 w-full flex-nowrap [&>a]:flex-1 [&>a]:justify-center" />
                     </div>
 
                     <div className="space-y-2 text-sm leading-6 text-slate-400">

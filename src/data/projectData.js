@@ -48,6 +48,7 @@ const projectsData = [
         link: "https://junikab.github.io/DJNikkiOG/",
         linkLabel: "Open site",
         category: "Artist website",
+        status: "In progress",
         year: "2026",
         tech: ["JavaScript", "Vite", "HTML", "CSS"],
     },

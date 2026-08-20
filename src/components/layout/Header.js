@@ -50,7 +50,7 @@ function Header() {
                     careful, reliable, and easy to use.
                 </p>
             </div>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-8 lg:justify-start">
+            <div className="mx-auto mt-6 flex w-full max-w-[18rem] flex-wrap items-center justify-between gap-4 lg:mx-0">
                 {introLogos.map(({ key, Logo, className }) => (
                     <HeaderLogo
                         key={key}

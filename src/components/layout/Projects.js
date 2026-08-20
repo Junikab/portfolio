@@ -17,9 +17,20 @@ function ProjectCard({ project }) {
                 <span className="project-meta">
                     {project.category || "Project"}
                 </span>
-                {project.year ? (
-                    <span className="project-meta">{project.year}</span>
-                ) : null}
+                <div className="flex items-center gap-3">
+                    {project.status ? (
+                        <span className="inline-flex items-center gap-1.5 text-amber-700">
+                            <span
+                                aria-hidden="true"
+                                className="h-1.5 w-1.5 rounded-full bg-amber-500"
+                            />
+                            {project.status}
+                        </span>
+                    ) : null}
+                    {project.year ? (
+                        <span className="project-meta">{project.year}</span>
+                    ) : null}
+                </div>
             </div>
             <a
                 href={project.link}
@@ -50,16 +61,18 @@ function ProjectCard({ project }) {
                     ))}
                 </ul>
 
-                <div className="mt-4 border-t border-slate-200 pt-4">
-                    <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-sky-700"
-                    >
-                        {getProjectLinkLabel(project)}
-                        <FiArrowUpRight className="h-4 w-4" />
-                    </a>
+                <div className="mt-auto pt-4">
+                    <div className="border-t border-slate-200 pt-4">
+                        <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 transition-colors hover:text-sky-700"
+                        >
+                            {getProjectLinkLabel(project)}
+                            <FiArrowUpRight className="h-4 w-4" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </article>

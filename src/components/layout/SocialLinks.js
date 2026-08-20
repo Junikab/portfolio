@@ -5,20 +5,19 @@ import Links from "../links";
 
 function SocialLinks() {
     return (
-        <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:gap-4">
-            <div>
+        <div className="mt-6 flex flex-col items-center gap-4 sm:mt-8 lg:items-start">
+            <div className="w-full max-w-[18rem]">
                 <p className="text-center text-[15px] leading-6 text-slate-300 lg:text-left sm:text-base sm:leading-7">
                     You can find my contact in the resume.
                 </p>
             </div>
-            <div className="mx-auto flex w-full max-w-[16rem] justify-center lg:mx-0 lg:w-auto lg:max-w-none lg:justify-start">
+            <div className="w-full max-w-[18rem]">
                 <DownloadResume
                     colorScheme="alternate"
-                    fullWidth={false}
                     className="whitespace-nowrap px-5 text-sm sm:text-base"
                 />
+                <Links className="mt-3 w-full flex-nowrap [&>a]:flex-1 [&>a]:justify-center" />
             </div>
-            <Links className="mx-auto w-full justify-center lg:mx-0 lg:w-auto lg:justify-start" />
         </div>
     );
 }

@@ -29,9 +29,13 @@ function About() {
                     </div>
                 </div>
 
-                <div className="order-1 relative flex min-h-[20rem] items-center justify-center overflow-hidden border-b border-slate-200 bg-slate-100 px-8 py-8 sm:min-h-[24rem] lg:order-2 lg:min-h-full lg:border-b-0 lg:border-l lg:px-10">
-                    <figure className="relative w-full max-w-[18rem]">
-                        <div className="aspect-[4/5] w-full overflow-hidden rounded-[6px] border border-slate-300 bg-white p-1.5 shadow-[0_12px_28px_rgba(15,23,42,0.12)]">
+                <div className="order-1 relative flex min-h-[18rem] items-center justify-center overflow-hidden bg-[linear-gradient(0deg,rgb(255,255,255),rgba(15,23,42,0.72))] px-6 py-8 sm:min-h-[20rem] sm:px-8 lg:order-2 lg:min-h-full lg:bg-[linear-gradient(90deg,rgb(255,255,255),rgba(15,23,42,0.72))] lg:px-10">
+                    <div
+                        aria-hidden="true"
+                        className="absolute inset-x-8 top-6 h-24 rounded-full bg-[radial-gradient(circle,_rgba(90,117,146,0.18),_transparent_68%)] blur-2xl"
+                    />
+                    <figure className="relative">
+                        <div className="mx-auto h-56 w-56 overflow-hidden rounded-full border-[4px] border-white/80 shadow-[0_24px_50px_rgba(15,23,42,0.16)] sm:h-64 sm:w-64 lg:h-72 lg:w-72">
                             <img
                                 className="h-full w-full object-cover"
                                 src={jennyImage}
