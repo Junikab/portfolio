@@ -6,6 +6,7 @@ import dadJokesImage from "../assets/dadJokes.png";
 import fitfinderIkeaImage from "../assets/fitFinderIkea.png";
 import jennysFlowersImage from "../assets/jennysFlowers.png";
 import llmJobFinder from "../assets/llmJobFinder.png";
+import nikkiOgImage from "../assets/nikkiOg.png";
 
 const projectsData = [
     {
@@ -40,6 +41,18 @@ const projectsData = [
     },
     {
         id: 3,
+        title: "DJ Nikki OG",
+        description:
+            "Responsive artist website for DJ Nikki OG, showcasing her sound, services, social profiles, and booking information.",
+        image: nikkiOgImage,
+        link: "https://junikab.github.io/DJNikkiOG/",
+        linkLabel: "Open site",
+        category: "Artist website",
+        year: "2026",
+        tech: ["JavaScript", "Vite", "HTML", "CSS"],
+    },
+    {
+        id: 4,
         title: "Flower Designer",
         description:
             "Custom florist website built for a business client, with a mobile-first layout and room for future gallery growth.",
@@ -51,7 +64,7 @@ const projectsData = [
         tech: ["JavaScript", "Vue", "Bootstrap"],
     },
     {
-        id: 4,
+        id: 5,
         title: "Fitfinder Ikea",
         description:
             "Chrome extension that allows you to filter furniture based on specific dimensions.",
@@ -62,7 +75,7 @@ const projectsData = [
         tech: ["JavaScript", "TypeScript", "React", "CSS"],
     },
     {
-        id: 5,
+        id: 6,
         title: "Lights Out",
         description: "Click lights to solve the colorful grid puzzle.",
         image: lightsOutImage,
@@ -72,7 +85,7 @@ const projectsData = [
         tech: ["JavaScript", "React", "CSS"],
     },
     {
-        id: 6,
+        id: 7,
         title: "Dad Jokes",
         description:
             "A source for the cheesiest and most delightful dad jokes.",
@@ -83,7 +96,7 @@ const projectsData = [
         tech: ["JavaScript", "React", "CSS"],
     },
     {
-        id: 7,
+        id: 8,
         title: "Yahtzee Game",
         description: "A Yahtzee game built with React.",
         image: yahtzeeImage,
@@ -93,7 +106,7 @@ const projectsData = [
         tech: ["JavaScript", "React", "CSS"],
     },
     {
-        id: 8,
+        id: 9,
         title: "YelpCamp",
         description:
             "Full-stack CRUD app for exploring and reviewing campgrounds, including auth, image upload, and map-based discovery.",

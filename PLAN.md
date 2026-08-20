@@ -1,6 +1,6 @@
 # Portfolio Improvement Plan
 
-Last updated: 2026-06-09
+Last updated: 2026-08-20
 Status: Layout update documented, validated, and ready for deployment
 
 ## Goal
@@ -73,6 +73,7 @@ Add one recent project in a way that remains easy to maintain.
 - [x] Add the recent portfolio project to `src/data/projectData.js`.
 - [x] Add safe fallbacks for project images and link labels.
 - [x] Keep the projects UI reusable for future additions.
+- [x] Add the DJ Nikki OG artist website and screenshot to the projects list.
 - [ ] Replace the temporary portfolio logo artwork with a stronger project screenshot if one becomes available.
 
 ### Project Fields
@@ -129,3 +130,6 @@ Each project can now support:
 - Updated `README.md` to describe the current shipped layout and deployment flow.
 - Updated this plan to reflect the final section order and deployment-readiness check.
 - Updated the smoke test to assert the current layout headings and re-ran validation successfully.
+
+### 2026-08-20
+- Added DJ Nikki OG to the project data with its live-site link, screenshot, and technology metadata.
