@@ -36,7 +36,7 @@ function Header() {
     return (
         <header>
             <div className="text-center lg:text-left">
-                <h1 className="font-display text-[3.25rem] font-medium leading-[0.9] text-white sm:text-6xl lg:text-[4.25rem]">
+                <h1 className="text-[3.25rem] font-medium leading-[0.9] text-white sm:text-6xl lg:text-[4.25rem]">
                     Jenny Deygin
                 </h1>
                 <p className="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-300 sm:text-base">

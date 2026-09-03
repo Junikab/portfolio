@@ -1,14 +1,14 @@
 # Portfolio Improvement Plan
 
-Last updated: 2026-08-20
-Status: Professional design refinement completed and validated on `professional-design-refresh`
+Last updated: 2026-09-03
+Status: Professional design refinement shipped; project content and docs refreshed on `master`
 
 ## Goal
 Improve the portfolio in three practical ways:
 
 1. Clean up the code so it is easier to understand and maintain.
 2. Refine the design so the site feels more polished and intentional.
-3. Add a recent project to the projects section without adding one-off code.
+3. Keep the projects section current without adding one-off code.
 
 ## Current Focus
 This file is a living checklist. Update it whenever scope changes or a task is completed.
@@ -66,15 +66,16 @@ Keep the current section structure, but improve the site's hierarchy, rhythm, an
 ## Phase 4: Project Content
 
 ### Objective
-Add one recent project in a way that remains easy to maintain.
+Keep recent project entries current in a way that remains easy to maintain.
 
 ### Tasks
 - [x] Expand the project data shape so cards can support richer metadata.
-- [x] Add the recent portfolio project to `src/data/projectData.js`.
+- [x] Add recent portfolio projects to `src/data/projectData.js` with consistent IDs and metadata.
 - [x] Add safe fallbacks for project images and link labels.
 - [x] Keep the projects UI reusable for future additions.
-- [x] Add the DJ Nikki OG artist website and screenshot to the projects list.
-- [ ] Replace the temporary portfolio logo artwork with a stronger project screenshot if one becomes available.
+- [x] Add the `FinAlly` project entry.
+- [x] Add the `LLM Job Finder` project entry and screenshot.
+- [ ] Replace older placeholder-like project artwork with stronger screenshots when they become available.
 
 ### Project Fields
 Each project can now support:
@@ -136,3 +137,7 @@ Each project can now support:
 - Started a separate `professional-design-refresh` branch for a safer visual experiment.
 - Reduced decorative rounding, shadows, pill treatments, and background glows across the page while preserving the skills bubbles.
 - Confirmed the production build succeeds after the design changes.
+
+### 2026-09-03
+- Updated `README.md` to describe the portfolio as a public project showcase and note the `LLM Job Finder` addition.
+- Updated this plan to reflect the current recent-project work in `src/data/projectData.js`.

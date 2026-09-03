@@ -1,6 +1,6 @@
 # Jenny Portfolio
 
-Single-page portfolio site built with React, Tailwind CSS, and a custom D3 skills visualization.
+Single-page portfolio site built with React, Tailwind CSS, and a custom D3 skills visualization. The site is used as a public showcase for Jenny Deygin's front-end, client, and AI-assisted projects.
 
 ## Stack
 - React 18
@@ -22,6 +22,11 @@ npm test -- --watchAll=false
 npm run build
 npm run deploy
 ```
+
+## Recent Project Content
+The projects section is maintained in `src/data/projectData.js`.
+
+Recent additions include `LLM Job Finder`, a public showcase project for AI-assisted job search built with TypeScript, React, Vite, Fastify, Playwright, and Cheerio.
 
 ## Project Structure
 - `src/components/layout/`: page sections

@@ -46,7 +46,7 @@ function ProjectCard({ project }) {
                 />
             </a>
             <div className="flex flex-1 flex-col px-1 pb-1 pt-6">
-                <h3 className="font-display text-[1.75rem] font-medium leading-none text-slate-950">
+                <h3 className="text-[1.75rem] font-medium leading-none text-slate-950">
                     {project.title}
                 </h3>
                 <p className="section-copy mt-3">

@@ -31,23 +31,13 @@ body {
     color: #0f172a;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-}
-
 @layer components {
-    .font-display {
-        font-family: "Newsreader", Georgia, serif;
-        letter-spacing: -0.04em;
-    }
-
     .surface-card {
         @apply relative overflow-hidden rounded-[12px] border border-slate-200 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.06)];
     }
 
     .section-heading {
-        @apply font-display text-[2.75rem] font-medium leading-[0.95] text-slate-950 sm:text-5xl;
+        @apply text-[2.75rem] font-medium leading-[0.95] text-slate-950 sm:text-5xl;
     }
 
     .section-copy {
